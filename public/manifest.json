@@ -1,0 +1,25 @@
+{
+  "short_name": "TuborgBeer85",
+  "name": "WebApp",
+  "icons": [
+    {
+      "src": "tuborg_logo_png.png",
+      "sizes": "200x54",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "tuborg_logo_png.png",
+      "type": "image/png",
+      "sizes": "200x54"
+    },
+    {
+      "src": "tuborg_logo_png.png",
+      "type": "image/png",
+      "sizes": "200x54"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
