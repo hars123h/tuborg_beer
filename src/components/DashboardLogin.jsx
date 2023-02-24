@@ -13,14 +13,14 @@ const DashboardLogin = () => {
     const navigate = useNavigate();
 
     const handleSubmit = async() => {
-        const {data} = await axios.post(`${BASE_URL}/admin_login`, {'email':email, 'password':password});
+        const {data} = await axios.post(`${BASE_URL}/dummyUser_login`, {'email':email, 'password':password});
         console.log(data);
         if(data!==null) {            
             localStorage.setItem('name',data.name);
             localStorage.setItem('email',data.email);
             localStorage.setItem('password',data.passoword);
             localStorage.setItem('access',data.access);
-            navigate('/admin/Dashboard');
+            navigate('/dummyUser/Dashboard');
         }else {
             toast('Invalid Email/Password!');
         }
