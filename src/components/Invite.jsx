@@ -68,11 +68,11 @@ const Invite = () => {
             </div>
 
             <p className='p-3 text-xs break-words'>
-                https://www.amazfit44.tech/register/invite_code/{userDetails.user_invite}
+                https://www.tuborgbeer85.tech/register/invite_code/{userDetails.user_invite}
             </p>
 
             <div className='p-3 font-bold cursor-pointer'>
-                <CopyToClipboard text={`https://www.amazfit44.tech/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
+                <CopyToClipboard text={`https://www.tuborgbeer85.tech/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
                     <span>Invite Link: click to copy</span>
                 </CopyToClipboard>
             </div>
@@ -88,7 +88,7 @@ const Invite = () => {
                 <QRCode
                     size={120}
                     style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                    value={`https://www.amazfit44.tech/register/invite_code/${userDetails.user_invite}`}
+                    value={`https://www.tuborgbeer85.tech/register/invite_code/${userDetails.user_invite}`}
                     viewBox={`0 0 120 120`}
                 />
             </div>
