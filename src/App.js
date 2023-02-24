@@ -34,14 +34,11 @@ import DashboardLogin from './components/DashboardLogin';
 import AdminLogout from './components/AdminLogout';
 import ClientFeedback from './components/ClientFeedback';
 import UserDetails from './components/UserDetails';
-import { createContext, useEffect, useState, useLayoutEffect } from 'react';
-import { getDoc, doc } from 'firebase/firestore';
-import db from './firebase/config';
+import { createContext, useState, useLayoutEffect } from 'react';
 import axios from 'axios';
 import BASE_URL from './api_url';
 import ShorPlans from './components/ShortPlans';
 import Rewards from './components/Rewards';
-import telephone from './images/telephone.svg'
 
 
 export const AmountContext = createContext();
