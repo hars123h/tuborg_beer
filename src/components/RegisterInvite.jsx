@@ -58,20 +58,20 @@ const Register = () => {
             return;
         }
 
-        // if (pwd !== cpwd) {
-        //     toaster('Passwords do not match!');
-        //     return;
-        // }
+        if (pwd !== cpwd) {
+            toaster('Passwords do not match!');
+            return;
+        }
 
         if (pwd.length < 6) {
             toaster('Password must contain at least 6 characters!');
             return;
         }
 
-        if (otp !== otpfield) {
-            toaster('Wrong OTP entered!');
-            return;
-        }
+        // if (otp !== otpfield) {
+        //     toaster('Wrong OTP entered!');
+        //     return;
+        // }
         //console.log({ mobno, pwd, cpwd, wpwd, invt });
         setLoading(true);
         await axios.post(`${BASE_URL}/register`,{mobno, pwd, wpwd, invt})
@@ -138,10 +138,10 @@ const Register = () => {
                         className='p-2 w-full  outline-none rounded-full rounded-tr-full' placeholder='Please enter a valid phone number' name="phoneno" id="phoneno" />
                 </div>
             </div>
-            <div className='flex border-b-2 border-gray-300 rounded-full mb-2 px-2 bg-white'>
+            {/* <div className='flex border-b-2 border-gray-300 rounded-full mb-2 px-2 bg-white'>
                 <input type="text" onChange={e => setOtp(e.target.value)} className='p-2 w-[90%] outline-none rounded-full' placeholder='Please enter the OTP' name="otp" id="otp" />
                 <button className='bg-red-800 text-white text-xs mr-1 px-4 my-1  rounded-full' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>OTP</button>
-            </div>
+            </div> */}
             <div className='flex justify-between bg-white items-center mb-2 outline-none border-b-2 border-gray-300 rounded-full px-2'>
                 <input value={pwd} onChange={e => setpwd(e.target.value)} type="password"
                     className='p-2 outline-none  rounded-full w-[90%]' placeholder='Please enter login password' name="passowrd" id="pass" />
