@@ -12,10 +12,10 @@ const Card = ({product_type, product_image, plan_name, plan_type, plan_amount, p
   return (
     <div className='mx-2 mb-1 shadow-2xl  bg-[#fafff9]  border border-gray-400'  onClick={()=>handleClick(product_type ,plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
         {/* <div className="title text-[#464945] font-bold text-lg">{plan_name}</div>         */}
-        <div className="info text-sm flex flex-col items-center">
+        <div className="info text-xs flex flex-col items-center">
             <img src={product_image} alt="comp_img" className='shadow-xl h-44 w-full' />
-            <div className="title text-red-800 w-full p-1  font-black text-lg">{plan_name}</div>
-            {product_type==='long' && (<div className="text-xs p-1 w-full  text-red-500 font-extrabold">Daily Income, Daily Withdrawals</div>)}
+            <div className="title text-red-800 w-full p-1 ml-1  font-black text-lg">{plan_name}</div>
+            {product_type==='long' && (<div className="text-xs p-1 ml-1 w-full  text-red-500 font-extrabold">Daily Income, Daily Withdrawals</div>)}
             {/* {product_type==='short' && (<div className="text-xs p-1 w-full  text-red-500 font-extrabold">Daily Income, Daily Withdrawals</div>)} */}
             <div className='text-md w-full grid grid-cols-2 p-3 gap-2'>
               <div className="basic_info text-black flex justify-start gap-1">

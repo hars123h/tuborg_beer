@@ -5,19 +5,6 @@ import { useState } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import axios from 'axios';
 import BASE_URL from '../api_url';
-import cartoon_user from '../images/cartoon_user.png';
-import new_invite_image from '../images/new_invite_image.png';
-import rent from '../images/rent.png';
-import financial from '../images/financial.png';
-import user from '../images/user.png';
-import make_money from '../images/make_money.png';
-import dividend from '../images/dividend.png';
-import invite_bg from '../images/invite_bg.png';
-import wind_login from '../images/wind_login.jpg';
-import ubon_home from '../images/ubon_home.png';
-import ubon_user from '../images/ubon_user.png';
-import ubon_group from '../images/ubon_group.png';
-import book_image from '../images/book_image.png';
 import setting from '../images/assets/asset 1.png';
 import asset3 from '../images/assets/asset 3.png';
 import asset4 from '../images/assets/asset 4.png';
@@ -32,9 +19,6 @@ import asset12 from '../images/assets/asset 12.png';
 import asset13 from '../images/assets/asset 13.png';
 import ReactModal from 'react-modal';
 import tuborg_logo from '../images/tuborg_logo.svg';
-
-
-
 
 const customStyles2 = {
   content: {
@@ -374,7 +358,7 @@ const Mine = () => {
 
       </div> */}
 
-      <div className="flex flex-col bg-red-800 gap-6 text-white">
+      <div className="flex flex-col bg-red-800 gap-3 text-white">
         <div className='flex flex-col justify-center items-center gap-1 p-3'>
           <img src={tuborg_logo} alt="wind_login" width={100} className="bg-white py-2 px-3 rounded-sm" />
           <div className='text-lg'>VIP: {mobileno}</div>
@@ -385,7 +369,7 @@ const Mine = () => {
           <div>Balance</div>
         </div>
 
-        <div className='flex flex-row w-full items-center h-24'>
+        <div className='flex flex-row w-full items-center h-20'>
 
           <div className="flex flex-col justify-center items-center gap-1 w-1/2 border-r border-white h-full">
             <div>&#8377; {recharge_amount}</div>
@@ -393,8 +377,8 @@ const Mine = () => {
           </div>
 
           <div className="flex flex-col w-1/2 h-full justify-center items-center gap-1">
-            <div>&#8377; {recharge_amount}</div>
-            <div>Recharge</div>
+            <div>&#8377; {earning}</div>
+            <div>Earning</div>
           </div>
         </div>
       </div>
