@@ -115,8 +115,8 @@ const Withdrawal = () => {
             toaster('You dont have enough balance');
             return;
         }
-
-        if (wpassword === loc.state.withdrawalPassword && otp === otpfield) {
+//&& otp === otpfield
+        if (wpassword === loc.state.withdrawalPassword ) {
             try {
                 const docRef1 = await axios.post(`${BASE_URL}/place_withdrawal`, { 
                     withdrawalAmount: (Number(wamount)), 
@@ -231,10 +231,10 @@ const Withdrawal = () => {
                     <input type="password" onChange={e => setWpassword(e.target.value)} placeholder='Enter Password' className='placeholder:text-xs outline-none bg-[#d3d6fe] w-1/3' />
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 sm:text-md md:text-xl p-3">
+                {/* <div className="balance flex justify-between text-gray-600 sm:text-md md:text-xl p-3">
                     <div className="wpwd w-2/3">OTP: <span className='text-sm bg-red-800 text-white px-3 py-1 hover:cursor-pointer rounded-full' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send OTP</span></div>
                     <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP' className='placeholder:text-xs outline-none bg-[#d3d6fe] w-1/3' />
-                </div>
+                </div> */}
 
             </div>
 
