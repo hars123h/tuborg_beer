@@ -78,11 +78,11 @@ const Team = () => {
       </div>
 
       <div className="flex border-b border-gray-300">
-        <div className="flex flex-col w-1/2 p-3 border-r border-gray-300">
+        <div className="flex flex-col w-1/2 py-1 px-2 border-r border-gray-300">
           <div className='text-gray-700 text-[10px] leading-3'>Team recharge (&#8377;)</div>
           <div className='text-blue-800 text-2xl'>&#8377;{(userDetails.directRecharge * (amountDetails.level1_percent) / 100) + (userDetails.indirectRecharge * (amountDetails.level2_percent) / 100) + (userDetails.in_indirectRecharge * (amountDetails.level3_percent) / 100)}</div>
         </div>
-        <div className="flex flex-col w-1/2 p-3">
+        <div className="flex flex-col w-1/2 py-1 px-2">
           <div className='text-gray-700 text-[10px] leading-3'>Team Number</div>
           <div className='text-blue-800 text-2xl'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
         </div>
@@ -91,10 +91,10 @@ const Team = () => {
       <div className='flex flex-col items-center w-full mt-1 border-t border-gray-300'>
 
 
-        <div className="flex items-center w-full">
-          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level1')}>First</div>
-          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level2')}>Second</div>
-          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level3')}>Third</div>
+        <div className="flex items-center w-full font-[300]">
+          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border-[0.5px] border-gray-200 text-gray-600'} p-2 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level1')}>First</div>
+          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border-[0.5px] border-gray-200 text-gray-600'} p-2 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level2')}>Second</div>
+          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border-[0.5px] border-gray-200 text-gray-600'} p-2 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level3')}>Third</div>
         </div>
 
         {currentVisible === 'level1' && (
