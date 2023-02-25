@@ -218,7 +218,7 @@ const Home = () => {
             </div> : null}
 
             {planPurchaseShow ? <div className='absolute w-[65%]  top-[450px] rounded-lg shadow-xl  z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex flex-col justify-center gap-3 h-[180px] shadow-2xl border border-gray-300 items-center bg-white w-full text-cyan-400 rounded-xl'>
+                <div className='flex flex-col justify-center gap-3 h-[180px] shadow-2xl border border-gray-300 items-center bg-white w-full text-red-800 rounded-xl'>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16">
                             <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
@@ -521,7 +521,7 @@ const Home = () => {
             {/*Navigation Bar 2 bg-[#1cb5b2]*/}
             {welcomeShow ? (
                 <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-                    <div className="flex flex-row justify-around items-center w-full py-2 text-sm font-bold">
+                    <div className="flex flex-row justify-around items-center w-full py-2 text-sm font-normal">
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={asset4} alt="online" className='w-8' />
                             <div>Home</div>
@@ -533,7 +533,7 @@ const Home = () => {
                         </div>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center '>
                             <img src={asset6} alt="app_dwd" className='w-8' />
-                            <div>Project</div>
+                            <div>Team</div>
                         </div>
 
 
@@ -544,9 +544,9 @@ const Home = () => {
                     </div>
                 </div>
             ) : (
-                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-                    <div className="flex flex-row justify-around font-medium text-sm items-center w-full py-2">
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-gray-700  flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
+                    <div className="flex flex-row justify-around font-normal text-sm items-center w-full py-2">
+                        <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={asset4} alt="online" className='w-8' />
                             <div>Home</div>
                         </div>
@@ -555,9 +555,9 @@ const Home = () => {
                             <img src={asset5} alt="recharge" className='w-8' />
                             <div>Company</div>
                         </div>
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/project')}>
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
                             <img src={asset6} alt="app_dwd" className='w-8' />
-                            <div>Project</div>
+                            <div>Team</div>
                         </div>
 
 

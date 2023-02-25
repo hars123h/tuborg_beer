@@ -481,8 +481,8 @@ const Mine = () => {
         <div>Sign out</div>
       </div>
 
-      <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-        <div className="flex flex-row justify-around items-center w-full py-2 font-medium text-sm">
+      <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none  flex overflow-x-hidden text-gray-600  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
+        <div className="flex flex-row justify-around items-center w-full py-2 font-normal  text-sm">
           <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'
             onClick={() => navigate('/home')}>
             <img src={asset10} alt="online" className='w-8' />
@@ -493,13 +493,13 @@ const Mine = () => {
             <img src={asset11} alt="recharge" className='w-8' />
             <div>Company</div>
           </div>
-          <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/project')}>
+          <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
             <img src={asset12} alt="app_dwd" className='w-8' />
-            <div>Project</div>
+            <div>Team</div>
           </div>
 
 
-          <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
+          <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
             <img src={asset13} alt="invite" className='w-8' />
             <div>Mine</div>
           </div>

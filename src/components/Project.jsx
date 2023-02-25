@@ -48,15 +48,15 @@ const Project = () => {
                     var earn = 0;
                     var ia = 0, ai = 0, ti = 0;
                     var temp = document.plans_purchased.map((element) => {
-                        ia+=element.plan_amount;
+                        ia += element.plan_amount;
 
                         var days = DateDifference(new Date(element.date_till_rewarded), new Date(Math.min(new Date(), addDays(new Date(element.date_purchased), element.plan_cycle))));
                         var days2 = DateDifference(new Date(element.date_till_rewarded), addDays(new Date(element.date_purchased), element.plan_cycle));
                         //console.log(days);
                         if (element.product_type === 'short') {
                             if (days === element.plan_cycle) {
-                                ti+=element.plan_daily_earning;
-                                ai+= (days * element.quantity * element.plan_daily_earning);
+                                ti += element.plan_daily_earning;
+                                ai += (days * element.quantity * element.plan_daily_earning);
                                 earn = (days * element.quantity * element.plan_daily_earning);
                                 return {
                                     ...element,
@@ -74,10 +74,10 @@ const Project = () => {
                                 ...element
                             }
                         }
-                        if((DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)))>=1) {
-                            ti+=element.plan_daily_earning;
+                        if ((DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded))) >= 1) {
+                            ti += element.plan_daily_earning;
                         }
-                        ai+= DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning;
+                        ai += DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning;
                         //console.log(ai);
                         earn = earn + (days * element.quantity * element.plan_daily_earning);
                         return {
@@ -138,17 +138,19 @@ const Project = () => {
     //[#2e9afe]
     return (
         <div className='md:h-screen overflow-y-scroll xs:h-[700px] bg-red-800 h-screen relative'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
+            </div> : null}
 
-            <div className="options text-center bg-red-800 text-white text-md pt-5 font-normal pb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 absolute left-2  storke-white top-5 cursor-pointer">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+            <div className="options flex items-center text-center bg-red-800 text-white text-md pt-1 px-1 font-normal pb-2">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                    className="w-4 h-4   storke-white  cursor-pointer stroke-white">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-                Project Record
+                <div className='flex-grow'>Project Record</div>
             </div>
 
 
