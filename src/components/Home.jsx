@@ -268,14 +268,14 @@ const Home = () => {
                         <div className='flex  flex-col bg-white w-full text-white rounded-md'>
                             <div className='bg-red-800 text-center p-1 text-lg shadow-md text-white'>Notice</div>
                             <div className='flex flex-col p-2 text-white text-md gap-2 font-bold bg-red-800 pt-4'>
-                                <div>Welcome to Wind Harvester investment Platform</div>
-                                <div>Let Wind Harvester create unlimited wealth with you.</div>
-                                <div>The Windharvester 44 APP is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 300 &#8377; Earn 20 &#8377; Daily</div>
-                                <div>Invest 600 &#8377; Earn 50 &#8377; Daily</div>
-                                <div>Invest 1500 &#8377; Earn 100 &#8377; Daily</div>
-                                <div>Invest 3000 &#8377; Earn 170 &#8377; Daily</div>
-                                <div>Invest 5000 &#8377; Earn 300 &#8377; Daily</div>
+                                <div>Welcome to TuborgBeer investment Platform</div>
+                                <div>Let TuborgBeer create unlimited wealth with you.</div>
+                                <div>The TuborgBeer85 APP is officialy launched, let us walk together on the road to wealth.</div>
+                                <div>Invest 490 &#8377; Earn 110 &#8377; Daily</div>
+                                <div>Invest 1600 &#8377; Earn 408 &#8377; Daily</div>
+                                <div>Invest 4900 &#8377; Earn 1320 &#8377; Daily</div>
+                                <div>Invest 13900 &#8377; Earn 3915 &#8377; Daily</div>
+                                <div>Invest 289000 &#8377; Earn 8500 &#8377; Daily</div>
                             </div>
 
                             <div className='border-t border-gray-600 my-1'></div>
