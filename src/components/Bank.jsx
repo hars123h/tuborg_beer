@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import axios from 'axios';
@@ -20,6 +20,17 @@ const Bank = () => {
     const [wpwd, setPwd] = useState('');
     const [toasterShow, setToasterShow] = useState(false);
     const [toasterText, setToasterText] = useState('');
+
+    const getUserData = async() => {
+        const docRef = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
+        if(docRef) {
+            setDetails(docRef.bank_details);
+            //console.log(docRef.bank_details);
+        }
+    }
+    useEffect(()=>{
+        getUserData();
+    },[]);
 
 
 

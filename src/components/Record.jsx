@@ -63,19 +63,18 @@ const Record = () => {
                 <div className='flex-grow text-center'>Record</div>
             </div>
             {/* [#bfdbf5] */}
-            <div className='flex flex-wrap items-center py-2 px-4 bg-stone-300 border-b border-white'>
+            <div className='flex flex-wrap items-center justify-between py-2 px-4 bg-stone-300 border-b border-white'>
                 <div className="relative w-24 ">
-                    <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
+                    <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-xs rounded-full focus:ring-red-500 focus:border-red-500 block w-full  px-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
                 </div>
                 {/*[#2ea2fc] */}
-                <div className='text-md text-white ml-3'>to</div>
+                <div className='text-md text-gray-600 font-medium ml-3'>to</div>
 
                 <div className="relative w-24 ml-3">
-
-                    <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
+                    <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-xs rounded-full focus:ring-red-500 focus:border-red-500 block w-full  px-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
                 </div>
                 {/* [#2e9afe] */}
-                <button className='bg-red-900 shadow-lg w-20 text-center  ml-3 text-white rounded-full p-2.5'>Search</button>
+                <button className='bg-red-900 shadow-lg w-20 text-center  ml-3 text-white rounded-full py-1'>Search</button>
             </div>
             {/* [#bce4ed] */}
             <div className='records w-full flex bg-sky-200 font-bold items-center'>

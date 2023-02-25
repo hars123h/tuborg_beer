@@ -32,6 +32,12 @@ const Team = () => {
     setLevel3(arr3);
   }
 
+  // const wSummary = async({user_id}) => {
+  //   const datas = await axios.post(`${BASE_URL}//withdrawalSum`, {user_id:user_id})
+  //   .then(({data})=>data.wSum)
+  //   console.log(datas);
+  // }
+
   useLayoutEffect(() => {
     getUserDetails().then(() => {
       setLoading(false);
@@ -106,7 +112,7 @@ const Team = () => {
 
             {level1.length === 0 ? (<div className='text-center text-gray-400 font-medium mt-5 text-sm'>No record</div>) : null}
 
-
+{/*{Math.max(0,element.recharge_amount + element.earning - element.balance)} */}
             {level1.map((element, index) => {
               return (
                 <div key={index} className='flex flex-col font-semibold justify-between w-full border leading-3 border-gray-300 text-[10px] py-4 px-2'>
@@ -114,7 +120,9 @@ const Team = () => {
                     <img src={tuborg_logo} alt="turbo_logo" width={70} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: 
+                          {element.withdrawal_sum}
+                      </div>
                     </div>
                     <div className='flex flex-col  items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
@@ -146,7 +154,7 @@ const Team = () => {
                     <img src={tuborg_logo} alt="turbo_logo" width={80} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: {element.withdrawal_sum}</div>
                     </div>
                     <div className='flex flex-col items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
@@ -177,7 +185,7 @@ const Team = () => {
                     <img src={tuborg_logo} alt="turbo_logo" width={80} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: {element.withdrawal_sum}</div>
                     </div>
                     <div className='flex flex-col  items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>

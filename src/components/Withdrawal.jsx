@@ -118,19 +118,27 @@ const Withdrawal = () => {
 //&& otp === otpfield
         if (wpassword === loc.state.withdrawalPassword ) {
             try {
-                const docRef1 = await axios.post(`${BASE_URL}/place_withdrawal`, { 
+                //const docRef1 = 
+                var temp_details = details;
+                delete temp_details._id;
+                await axios.post(`${BASE_URL}/place_withdrawal`, { 
                     withdrawalAmount: (Number(wamount)), 
-                    ...details, 
+                    ...temp_details, 
                     afterDeduction: (Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100)), 
                     user_id: localStorage.getItem('uid'), 
                     time:new Date(),
                     balance: balance,
                     status: 'pending' 
-                });
+                }).then(()=>{
                 toaster('Withdrawal request placed successfully!', '/record');
-                //navigate('/record');
+                setIsOpen(false);
+                }).catch(e=>{
+                    console.log(e);
+                })
+                
             } catch (e) {
                 console.error("Error adding document: ", e);
+                
             }
         } else {
             toaster('Withdrawal Password is incorrect');
