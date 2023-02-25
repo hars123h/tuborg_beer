@@ -452,17 +452,7 @@ const Mine = () => {
           </div>
         </a>
 
-        <div className="flex items-center border-b border-gray-300 py-2" >
-          <div className='w-[10%]'><img src={asset8} alt="setting" className=' w-6 h-6' /></div>
-
-          <div className='flex-grow'>Download</div>
-          <div className='w-[10%]'>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 stroke-gray-300">
-              <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-
+      
         <div className="flex items-center border-b border-gray-300 py-2" onClick={() => navigate('/team')} >
           <div className='w-[10%]'><img src={asset9} alt="setting" className=' w-6 h-6' /></div>
 
