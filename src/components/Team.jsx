@@ -49,7 +49,7 @@ const Team = () => {
   return (
     <div className=''>
       {/* [#2e9afe] */}
-      <div className="top flex items-center my-auto text-center h-10 p-1 bg-red-800 text-white text-lg font-medium">
+      <div className="top flex items-center my-auto text-center h-10 p-1 bg-red-800 text-white text-md font-medium">
         <div className='absolute flex w-32 cursor-pointer' onClick={() => navigate(-1)}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -78,11 +78,11 @@ const Team = () => {
       <div className="flex border-b border-gray-300">
         <div className="flex flex-col w-1/2 p-3 border-r border-gray-300">
           <div className='text-gray-700 text-xs'>Team recharge (&#8377;)</div>
-          <div className='text-black text-2xl'>&#8377;{(userDetails.directRecharge * (amountDetails.level1_percent) / 100) + (userDetails.indirectRecharge * (amountDetails.level2_percent) / 100) + (userDetails.in_indirectRecharge * (amountDetails.level3_percent) / 100)}</div>
+          <div className='text-blue-800 text-2xl'>&#8377;{(userDetails.directRecharge * (amountDetails.level1_percent) / 100) + (userDetails.indirectRecharge * (amountDetails.level2_percent) / 100) + (userDetails.in_indirectRecharge * (amountDetails.level3_percent) / 100)}</div>
         </div>
         <div className="flex flex-col w-1/2 p-3">
           <div className='text-gray-700 text-xs'>Team Number</div>
-          <div className='text-black text-2xl'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
+          <div className='text-blue-800 text-2xl'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
         </div>
       </div>
 
@@ -90,9 +90,9 @@ const Team = () => {
 
 
         <div className="flex items-center w-full font-semibold">
-          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level1')}>Level 1</div>
-          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level2')}>Level 2</div>
-          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-600'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level3')}>Level 3</div>
+          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level1')}>Level 1</div>
+          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level2')}>Level 2</div>
+          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level3')}>Level 3</div>
         </div>
 
         {currentVisible === 'level1' && (

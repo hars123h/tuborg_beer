@@ -123,7 +123,7 @@ const Register = () => {
                 </div> : null}
                 <div className='text-sm'>{text}</div>
             </div> : null}
-            <div className='text-center bg-red-500 font-sans text-white pt-2 text-lg 
+            <div className='text-center bg-red-800 font-sans text-white pt-2 text-lg 
     pb-2'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 absolute left-2 cursor-pointer hover:bg-white hover:stroke-black hover:rounded-full transition rounded-full ease-in-out delay-150 duration-200">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
