@@ -135,7 +135,7 @@ const Register = () => {
                 <div className='outline-none flex items-center justify-between mb-2 border-b-2 border-gray-300 rounded-full'>
                     <div className='w-full'>
                         <input value={mobno} onChange={e => setMobno(e.target.value)} type="text"
-                            className='p-2 w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-md' placeholder='Phone Number' name="phoneno" id="phoneno" />
+                            className='p-2 w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-xs' placeholder='Phone Number' name="phoneno" id="phoneno" />
                     </div>
                 </div>
                 {/* <div className='flex border-b-2 border-gray-300 rounded-full mb-2 px-2 bg-white'>
@@ -144,26 +144,26 @@ const Register = () => {
             </div> */}
                 <div className='flex justify-between bg-white items-center mb-2 outline-none border-b-2 border-gray-300 rounded-full px-2'>
                     <input value={pwd} onChange={e => setpwd(e.target.value)} type="password"
-                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-md' placeholder='Please enter login password' name="passowrd" id="pass" />
+                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-xs' placeholder='Please enter login password' name="passowrd" id="pass" />
                     <img src={close_eye} alt="close_eye" width={30} className="p-1" />
                 </div>
 
                 <div className='flex justify-between bg-white items-center mb-2 outline-none border-b-2 border-gray-300 rounded-full px-2'>
                     <input value={cpwd} onChange={e => setCpwd(e.target.value)} type="password"
-                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-md' placeholder='Please confirm the login password' name="cnfpass" id="cnfpass" />
+                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-xs' placeholder='Please confirm the login password' name="cnfpass" id="cnfpass" />
                     <img src={close_eye} alt="close_eye" width={30} className="p-1" />
                 </div>
 
                 <div className='flex justify-between bg-white items-center mb-2 outline-none border-b-2 border-gray-300 rounded-full px-2'>
                     <input value={wpwd} onChange={e => setwpwd(e.target.value)} type="password"
-                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-sm' placeholder="Please enter the Withdrawal password" name="withpassword" id="wthpass" />
+                        className='p-2 outline-none  rounded-full w-[90%] placeholder-gray-600 placeholder:text-xs' placeholder="Please enter the Withdrawal password" name="withpassword" id="wthpass" />
                     <img src={close_eye} alt="close_eye" width={30} className="p-1" />
                 </div>
 
-                <input value={invt} onChange={e => setInvt(e.target.value)} type="text" className='p-2 mb-2 placeholder-gray-600 placeholder:text-md  outline-none border-b-2 border-gray-300 rounded-full' placeholder='Invitation code' name="invite_code" id="inv_code" />
+                <input value={invt} onChange={e => setInvt(e.target.value)} type="text" className='p-2 mb-2 placeholder-gray-600 placeholder:text-xs  outline-none border-b-2 border-gray-300 rounded-full' placeholder='Invitation code' name="invite_code" id="inv_code" />
 
                 <button onClick={handleRegister} className='bg-blue-800 text-white pt-2 pb-1 rounded-full text-lg'>Register</button>
-                <div onClick={() => navigate('/login')} className='cursor-pointer text-center text-red-800 mt-2 p-2 mb-2 bg-white font-bold  rounded-full'>
+                <div onClick={() => navigate('/login')} className='cursor-pointer text-center text-red-800 mt-2 p-2 mb-2 bg-white font-medium  rounded-full'>
                     Already have an account, log in
                 </div>
             </div>
