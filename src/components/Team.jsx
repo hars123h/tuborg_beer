@@ -47,7 +47,7 @@ const Team = () => {
   }
 
   return (
-    <div className=''>
+    <div className='bg-white'>
       {/* [#2e9afe] */}
       <div className="top flex items-center my-auto text-center h-10 p-1 bg-red-800 text-white text-md font-medium">
         <div className='absolute flex w-32 cursor-pointer' onClick={() => navigate(-1)}>
@@ -60,9 +60,11 @@ const Team = () => {
 
       <div className="flex flex-row justify-between items-center p-2 border-b border-gray-300" >
         <div className='flex flex-row justify-between items-center flex-grow mx-2'>
-          <input type="date" name="date_from" id="date_from" className='outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
+          <input type="date" name="date_from" id="date_from" 
+          className=' outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
           <div className='font-medium mx-1'>to</div>
-          <input type="date" name="date_from" id="date_from" className='outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
+          <input type="date" name="date_from" id="date_from" 
+          className='outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
         </div>
         <div>
           <button className="bg-red-800 text-white text-xs px-2 rounded-full py-[3px] flex items-center gap-1">
@@ -90,9 +92,9 @@ const Team = () => {
 
 
         <div className="flex items-center w-full font-semibold">
-          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level1')}>Level 1</div>
-          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level2')}>Level 2</div>
-          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-lg w-1/3`} onClick={e => setCurrentVisible('level3')}>Level 3</div>
+          <div className={`${currentVisible === 'level1' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level1')}>Level 1</div>
+          <div className={`${currentVisible === 'level2' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level2')}>Level 2</div>
+          <div className={`${currentVisible === 'level3' ? 'text-red-800 border-b-2 border-red-800' : 'border border-gray-300 text-gray-700'} p-3 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level3')}>Level 3</div>
         </div>
 
         {currentVisible === 'level1' && (
@@ -107,14 +109,14 @@ const Team = () => {
 
             {level1.map((element, index) => {
               return (
-                <div key={index} className='flex flex-col font-semibold justify-between w-full border border-gray-300 text-xs py-4 px-2'>
+                <div key={index} className='flex flex-col font-semibold justify-between w-full border leading-3 border-gray-300 text-[10px] py-4 px-2'>
                   <div className='flex items-start gap-3 w-full'>
                     <img src={tuborg_logo} alt="turbo_logo" width={70} className='m-1' />
-                    <div className='text-sky-500 flex flex-col text-xs'>
+                    <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {(element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
                     </div>
-                    <div className='flex flex-col text-xs items-end flex-grow'>
+                    <div className='flex flex-col  items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-blue-900'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
@@ -128,7 +130,7 @@ const Team = () => {
         )}
 
         {currentVisible === 'level2' && (
-          <div className='flex text-red-800 items-center font-semibold flex-col w-full  text-lg p-3 m-3 mt-0'>
+          <div className='flex text-red-800 items-center font-semibold flex-col w-full  text-lg  mt-0'>
             {/* <div className='flex flex-col w-full'>
               <div>Level 2 Member: {userDetails.indirectMember.length}</div>
               <div>Level 2 Earning: &#8377;{(userDetails.indirectRecharge) * (amountDetails.level2_percent / 100)}</div>
@@ -139,14 +141,14 @@ const Team = () => {
 
             {level2.map((element, index) => {
               return (
-                <div key={index} className='flex flex-col font-semibold justify-between w-full border border-gray-300 text-xs py-4 px-2'>
+                <div key={index} className='flex flex-col font-semibold justify-between w-full border border-gray-300  text-[10px] leading-3 py-4 px-2'>
                   <div className='flex items-start gap-3 w-full'>
                     <img src={tuborg_logo} alt="turbo_logo" width={80} className='m-1' />
-                    <div className='text-sky-500 flex flex-col text-xs'>
+                    <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {(element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
                     </div>
-                    <div className='flex flex-col text-xs items-end flex-grow'>
+                    <div className='flex flex-col items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-blue-900'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
@@ -160,7 +162,7 @@ const Team = () => {
         )}
 
         {currentVisible === 'level3' && (
-          <div className='flex text-red-800 items-center font-semibold flex-col w-full text-lg p-3 m-3 mt-0'>
+          <div className='flex text-red-800 items-center font-semibold flex-col w-full text-lg  mt-0'>
             {/* <div className='flex flex-col w-full'>
               <div>Level 3 Member: {userDetails.in_indirectMember.length}</div>
               <div>Level 3 Earning: &#8377;{(userDetails.in_indirectRecharge) * (amountDetails.level3_percent / 100)}</div>
@@ -170,14 +172,14 @@ const Team = () => {
 
             {level3.map((element, index) => {
               return (
-                <div key={index} className='flex flex-col font-semibold justify-between w-full border border-gray-300 text-xs py-4 px-2'>
+                <div key={index} className='flex flex-col font-semibold justify-between w-full border border-gray-300 leading-3 text-[10px] py-4 px-2'>
                   <div className='flex items-start gap-3 w-full'>
                     <img src={tuborg_logo} alt="turbo_logo" width={80} className='m-1' />
-                    <div className='text-sky-500 flex flex-col text-xs'>
+                    <div className='text-sky-500 flex flex-col'>
                       <div>Recharge: {(element.recharge_amount)}</div>
-                      <div>withdraw: {(element.recharge_amount + element.earning - element.balance)}</div>
+                      <div>withdraw: {Math.max(0,element.recharge_amount + element.earning - element.balance)}</div>
                     </div>
-                    <div className='flex flex-col text-xs items-end flex-grow'>
+                    <div className='flex flex-col  items-end flex-grow'>
                       <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-blue-900'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
