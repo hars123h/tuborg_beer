@@ -14,9 +14,10 @@ const Settings = () => {
     return (
         <div className='bg-white h-screen'>
             <div className="options flex items-center text-center text-white bg-red-800 text-lg p-1 font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/mine')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-                    className="w-4 h-4  storke-white  cursor-pointer">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => navigate('/mine')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                    className="w-4 h-4   storke-white  cursor-pointer stroke-white">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
                 <div className='flex-grow'>Personal Information</div>
             </div>

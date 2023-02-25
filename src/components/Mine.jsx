@@ -141,17 +141,17 @@ const Mine = () => {
           contentLabel="Notice"
           ariaHideApp={false}
         >
-          <div className='w-full rounded-lg shadow-xl z-10  border border-gray-400'>
-            <div className='flex gap-2 flex-col bg-white w-full  rounded-md'>
-              <div className='text-center text-lg font-bold py-3'>Are you sure to log out?</div>
-              <div className="flex text-blue-400">
-                <div className='text-center w-1/2 border-r   font-semibold p-2 border-t border-gray-600'
+          <div className='w-full  shadow-xl z-10 border border-gray-200'>
+            <div className='flex gap-2 flex-col bg-white w-full '>
+              <div className=' text-lg px-3  py-3'>Are you sure to log out?</div>
+              <div className="flex text-blue-400 justify-end">
+                <div className='text-center w-[80px]  text-gray-400   font-semibold p-2'
                   onClick={(e) => {
                     setLogout_popup(false);
                   }}>
-                  cancel
+                  no
                 </div>
-                <div className='text-center w-1/2  font-semibold p-2 border-t border-gray-600'
+                <div className='text-center w-[80px]  font-semibold p-2'
                   onClick={(e) => {
                     setLogout_popup(false);
                     handleSignOut();
@@ -365,25 +365,25 @@ const Mine = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-1">
-          <div>&#8377; {balance}</div>
+          <div>{balance}</div>
           <div>Balance</div>
         </div>
 
         <div className='flex flex-row w-full items-center h-20'>
 
           <div className="flex flex-col justify-center items-center gap-1 w-1/2 border-r border-white h-full">
-            <div>&#8377; {recharge_amount}</div>
+            <div>{recharge_amount}</div>
             <div>Recharge</div>
           </div>
 
           <div className="flex flex-col w-1/2 h-full justify-center items-center gap-1">
-            <div>&#8377; {earning}</div>
+            <div>{earning}</div>
             <div>Earning</div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col p-2 text-black font-bold">
+      <div className="flex flex-col p-2  font-medium text-sm">
 
         <div className="flex items-center border-b border-gray-300 py-2" onClick={() => navigate('/settings', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } })}>
           <div className='w-[10%]'><img src={setting} alt="setting" className=' w-6 h-6' /></div>
@@ -476,13 +476,13 @@ const Mine = () => {
 
       </div>
 
-      <div onClick={() => setLogout_popup(true)} className="flex flex-row justify-center text-xl font-bold
+      <div onClick={() => setLogout_popup(true)} className="flex flex-row justify-center text-xl
         w-[90%] mx-auto py-1 mt-4 text-center rounded-lg bg-red-800 text-white">
         <div>Sign out</div>
       </div>
 
       <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-        <div className="flex flex-row justify-around items-center w-full py-2 font-bold text-sm">
+        <div className="flex flex-row justify-around items-center w-full py-2 font-medium text-sm">
           <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'
             onClick={() => navigate('/home')}>
             <img src={asset10} alt="online" className='w-8' />

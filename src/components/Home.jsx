@@ -66,6 +66,12 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         backgroundColor: 'white',
+        overflow: 'hidden',
+        position: 'relative',
+        width: '95%',
+        border:'none',
+        backgroundColor:'transparent'
+
     },
 };
 
@@ -77,7 +83,7 @@ const customStyles2 = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        
+        position: 'relative',
         border: 'none',
         padding: 0,
         width: '85%'
@@ -222,32 +228,31 @@ const Home = () => {
                 </div>
             </div> : null}
 
-            {/* <div className='bg-[#fafff9] py-3 shadow-lg px-3 flex justify-between items-center'>
-                <div>
-                    <img src={windharvester_logo} className="w-24 h-6" alt="logo" />
-                </div>
-
-            </div> */}
             <Slider />
-            {/* <div className="box bg-[#fafff9] relative  shadow-xl mx-4 mt-5 border border-gray-300" onClick={() => navigate('/invite')}>
-                <img src={invite_bg} alt="invite_image" className='rounded-xl' />
-                <div className='flex flex-col  absolute top-1 left-2 m-1'>
-                    <div className='text-2xl font-extrabold text-white'>Invite friends to make money together</div>
-                    <div className='text-center shadow-xl px-4 py-1 rounded-full text-white text-xl font-extrabold button_bg'>Implement friends right away</div>
-                </div>
-            </div> */}
-            <div>
+            <div >
                 <ReactModal
                     isOpen={modalIsOpen}
                     style={customStyles}
                     contentLabel="Enter Project Quantity"
                     ariaHideApp={false}
-
                 >
-                    <h1 className='text-gray-600 mb-3 text-xl'>Are you Sure?</h1>
-                    <div>
-                        <button onClick={() => closeModal('ok')} className='bg-red-800 text-white px-2 py-1 rounded-lg shadow-md w-[64px]'>Yes</button>
-                        <button onClick={() => closeModal('cancel')} className='bg-red-800 text-white px-2 py-1 rounded-lg shadow-md w-[64px] ml-2'>cancel</button>
+
+                    <div className='relative bg-white p-2 w-full rounded-sm '>
+                        <div
+                            onClick={() => closeModal('cancel')}
+                            className='absolute  right-[-10px] top-[-10px] bg-white font-extrabold  w-10 h-10 text-white  flex justify-center items-center rounded-full'>
+                            <div className='bg-slate-500 w-7 h-7 rounded-full text-center text-xl'>
+                                X
+                            </div>
+                        </div>
+                        <div>
+                            <h1 className='text-gray-600 mb-3 mt-2 text-md mr-5 font-semibold'>Are you sure you want to buy this plan?</h1>
+
+                            <div className='flex justify-end pt-4'>
+                                <button onClick={() => closeModal('ok')} className='bg-red-800 text-white px-2 py-1   w-[64px]'>Yes</button>
+                                <button onClick={() => closeModal('cancel')} className='border border-gray-300  px-2 py-1   w-[64px] ml-2'>No</button>
+                            </div>
+                        </div>
                     </div>
                 </ReactModal>
             </div>
@@ -315,7 +320,7 @@ const Home = () => {
                     </a>
 
                     <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={asset1} alt="recharge" className='w-10'  />
+                        <img src={asset1} alt="recharge" className='w-10' />
                         <div>App</div>
                     </div>
 
@@ -333,8 +338,8 @@ const Home = () => {
             </div>
 
             <div className='bg-red-800 text-md text-white flex mt-1 items-center shadow-lg  mb-2 sm:w-3/5 lg:w-3/5 mx-auto'>
-                <div className={`w-1/2 text-center bg-white  py-4 ${currentVisible === 'big' ? ' bg-red-800' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('big')}>Normal Plans</div>
-                <div className={`w-1/2 text-center bg-white py-4 ${currentVisible === 'short' ? ' bg-red-800 ' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('short')}>VIP Plans</div>
+                <div className={`w-1/2 text-center bg-white  py-4 ${currentVisible === 'big' ? ' bg-red-800' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('big')}>Normal Beer</div>
+                <div className={`w-1/2 text-center bg-white py-4 ${currentVisible === 'short' ? ' bg-red-800 ' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('short')}>VIP Beer</div>
             </div>
 
             {/*Plans Cards*/}
@@ -343,7 +348,7 @@ const Home = () => {
                 {currentVisible === 'big' && (
                     <div className='grid grid-cols-1'>
                         {userDetails && amountDetails?.plan_state && (
-                            <div className='grid grid-cols-1 gap-1'>
+                            <div className='grid grid-cols-1'>
                                 {userDetails && (amountDetails.plan_state[0] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card product_type={"long"} product_image={tuborg1} handleClick={handleClick} plan_name={"TuborgBeer 1"} plan_cycle={120} plan_daily_earning={110} plan_amount={490} plan_type={'Big Plan'} />
@@ -442,7 +447,7 @@ const Home = () => {
             <div className={`card_grid grid grid-cols-1 sm:w-3/5 lg:w-3/5 w-[97%] mx-auto mt-2 ${currentVisible === 'short' ? 'mb-20' : ''}`}>
 
                 {currentVisible === 'short' && amountDetails?.plan_state && userDetails && (
-                    <div className={`grid grid-cols-1 gap-1`}>
+                    <div className={`grid grid-cols-1`}>
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
                             (
                                 <span className='pointer-events-none'>
@@ -540,7 +545,7 @@ const Home = () => {
                 </div>
             ) : (
                 <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-                    <div className="flex flex-row justify-around font-bold text-sm items-center w-full py-2">
+                    <div className="flex flex-row justify-around font-medium text-sm items-center w-full py-2">
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={asset4} alt="online" className='w-8' />
                             <div>Home</div>

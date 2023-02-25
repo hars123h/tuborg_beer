@@ -162,7 +162,7 @@ const Withdrawal = () => {
     }
     //[#2e9afe]
     return (
-        <div className='bg-red-500 flex flex-col p-4 sm:h-[1000px] md:h-[950px] relative'>
+        <div className='bg-red-800 flex flex-col p-4 sm:h-[1000px] md:h-[950px] relative'>
             {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
@@ -178,72 +178,74 @@ const Withdrawal = () => {
                 >
                     <h1 className='text-gray-600 mb-3 text-xl'>Are you Sure?</h1>
                     <div>
-                        <button onClick={() => handleWithdrawal()} className='bg-red-500 text-white px-2 py-1 rounded-lg shadow-md w-[64px]'>Yes</button>
-                        <button onClick={() => setIsOpen(false)} className='bg-red-500 text-white px-2 py-1 rounded-lg shadow-md w-[64px] ml-2'>cancel</button>
+                        <button onClick={() => handleWithdrawal()} className='bg-red-800 text-white px-2 py-1 rounded-lg shadow-md w-[64px]'>Yes</button>
+                        <button onClick={() => setIsOpen(false)} className='bg-red-800 text-white px-2 py-1 rounded-lg shadow-md w-[64px] ml-2'>cancel</button>
                     </div>
                 </ReactModal>
             </div>
-            <div className="options text-center text-white text-lg pt-2 font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/home')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 absolute left-2  storke-white top-5 cursor-pointer">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+            <div className="options flex items-center text-center text-white text-lg pt-2 font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => navigate('/home')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                    className="w-5 h-5   storke-white  cursor-pointer stroke-white">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-                Withdrawl
+                <div className='flex-grow'>Withdrawal</div>
             </div>
-{/*| After Deduction} */}
+{/*| After Deduction} | Rs.{(Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100))}*/}
             <div className="part1 bg-[#d3d6fe] p-3 rounded-lg mx-3 mt-5">
-                <div className='text-red-600 px-2 my-1  rounded-full border border-red-600 inline'>Withdrawal Fee {amountDetails.withdrawal_fee}% | Rs.{(Number(wamount) - (Number(amountDetails.withdrawal_fee) * Number(wamount) / 100))}</div>
+                <div className='text-red-800 px-2 my-1  rounded-full border border-red-800 inline'>Tax {amountDetails.withdrawal_fee}% </div>
                 <div className='flex items-center justify-start gap-2 my-1'>
-                    <div className='text-red-600 text-3xl'>&#8377;</div>
-                    <div className="value"> <input type="number" id="withdrawal_field" onChange={handleWithdrawalAmount} className='w-full text-2xl outline-none bg-[#d3d6fe] py-2' placeholder='Amount' /></div>
+                    <div className='text-red-800 text-xl'>&#8377;</div>
+                    <div className="value"> <input type="number" id="withdrawal_field" onChange={handleWithdrawalAmount} className='w-full text-xl outline-none bg-[#d3d6fe] py-2' placeholder='Amount' /></div>
                 </div>
-                <div className='flex items-center justify-start gap-2 my-1'>
-                    <div className="balance text-red-600 text-sm">Balance &#8377; {balance}</div>
-                    <div onClick={handleWithdrawalAll} className="withdraw text-red-600 text-sm cursor-pointer">Withdraw all</div>
+                <div className='flex items-center justify-start gap-4 my-1'>
+                    <div className="balance text-gray-400 font-semibold text-sm">Balance: &#8377; {balance}</div>
+                    <div onClick={handleWithdrawalAll} className="withdraw font-medium text-red-800 text-sm cursor-pointer">Withdraw all</div>
                 </div>
             </div>
 
             <div className="part1 bg-[#d3d6fe] p-4 rounded-lg mx-3 mt-5">
-                {/* #87a1c3 */}
-                <div className="balance flex justify-between text-gray-600 text-xl p-3 border-[#87a1c3] border-b-2">
+                {/* #87a1c3  border-[#87a1c3]*/}
+                <div className="balance flex items-center justify-between text-gray-600 text-md p-3">
                     <div className="phoneno">Phone Number:</div>
                     <div className='text-black text-sm'>{details.phoneNo}</div>
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 text-xl p-3 border-[#87a1c3] border-b-2">
+                <div className="balance flex items-center justify-between text-gray-600 text-md p-3">
                     <div className="bnkac">Bank Account:</div>
                     <div className='text-black text-sm'>{details.bankAccount}</div>
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 text-xl p-3 border-[#87a1c3] border-b-2">
+                <div className="balance flex items-center justify-between text-gray-600 text-md p-3">
                     <div className="fullname">Full Name:</div>
                     <div className='text-black text-sm'>{details.fullName}</div>
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 text-xl p-3 border-[#87a1c3] border-b-2">
+                <div className="balance flex items-center justify-between text-gray-600 text-md p-3">
                     <div className="ifsc">IFSC:</div>
                     <div className='text-black text-sm'>{details.ifsc}</div>
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 sm:text-md md:text-xl p-3 border-[#87a1c3] border-b-2">
+                <div className="balance flex justify-between items-center text-gray-600 sm:text-md md:text-md p-3">
                     <div className="wpwd w-2/3">Withdrawal Password:</div>
-                    <input type="password" onChange={e => setWpassword(e.target.value)} placeholder='Enter Password' className='outline-none bg-[#d3d6fe] w-1/3' />
+                    <input type="password" onChange={e => setWpassword(e.target.value)} placeholder='Enter Password' className='placeholder:text-xs outline-none bg-[#d3d6fe] w-1/3' />
                 </div>
 
-                <div className="balance flex justify-between text-gray-600 sm:text-md md:text-xl p-3 border-[#87a1c3] border-b-2">
-                    <div className="wpwd w-2/3">OTP: <span className='text-sm bg-red-500 text-white px-3 py-1 hover:cursor-pointer rounded-full' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send OTP</span></div>
-                    <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP' className='outline-none bg-[#d3d6fe] w-1/3' />
+                <div className="balance flex justify-between text-gray-600 sm:text-md md:text-xl p-3">
+                    <div className="wpwd w-2/3">OTP: <span className='text-sm bg-red-800 text-white px-3 py-1 hover:cursor-pointer rounded-full' onClick={() => handleOTPSend(String(Math.floor(100000 + Math.random() * 900000)))}>Send OTP</span></div>
+                    <input type="password" onChange={e => setOtp(e.target.value)} placeholder='Enter OTP' className='placeholder:text-xs outline-none bg-[#d3d6fe] w-1/3' />
                 </div>
 
             </div>
 
             <div className="part1 bg-[#d3d6fe] p-3 rounded-lg mx-3 mt-5 flex flex-col gap-3">
-                <div className='text-amber-800 text-sm'>* The time of withdrawal and arrival is subject to the real-time processing time of the local bank, and the normal arrival time is 10 minutes to 24 hours.</div>
-                <div className='text-amber-800 text-sm'>* A single minimum withdrawal amount of not less than Rs {amountDetails.mwamount}.</div>
-                <div className='text-amber-800 text-sm'>* Withdrawal Time is 9:00 to 19:00  Everyday.</div>
+                <div className='text-pink-600 font-medium text-sm'>* The time of withdrawal and arrival is subject to the real-time processing time of the local bank, and the normal arrival time is 10 minutes to 24 hours.</div>
+                <div className='text-pink-600 font-medium text-sm'>* A single minimum withdrawal amount of not less than Rs {amountDetails.mwamount}.</div>
+                <div className='text-pink-600 font-medium text-sm'>* Withdrawal Time is 9:00 to 19:00  Everyday.</div>
             </div>
             {/* [#2e9afe] */}
             <div>
-                <button onClick={handleLastButton} className='bg-red-600 text-white text-lg mt-5 mb-20 rounded-lg shadow-md block w-full py-2 shadow-amber-400'>Confirm</button>
+                <button onClick={handleLastButton} className='bg-red-800 text-white text-lg mt-5 mb-20 rounded-lg shadow-md block w-full py-2 shadow-red-400'>Confirm</button>
             </div>
         </div>
     )
