@@ -77,10 +77,10 @@ const Record = () => {
                 <button className='bg-red-900 shadow-lg w-20 text-center  ml-3 text-white rounded-full py-1'>Search</button>
             </div>
             {/* [#bce4ed] */}
-            <div className='records w-full flex bg-sky-200 font-bold items-center'>
-                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'recharges' ? 'border-b border-white text-white' : ''}`} onClick={() => setCurrentRecord('recharges')}>Recharge</div>
-                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'withdrawals' ? 'border-b border-white text-white' : ''}`} onClick={() => setCurrentRecord('withdrawals')}>Withdrawls</div>
-                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'all' ? 'border-b border-white text-white' : ''}`} onClick={() => setCurrentRecord('all')}>All Types</div>
+            <div className='records w-full flex bg-sky-200 font-normal items-center'>
+                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'recharges' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('recharges')}>Recharge</div>
+                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'withdrawals' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('withdrawals')}>Withdrawls</div>
+                <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'all' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('all')}>All Types</div>
             </div>
 
             {recharge_list === null && (<div className='flex flex-col justify-center items-center'>
@@ -98,14 +98,15 @@ const Record = () => {
                 {(currentRecord === 'recharges' || currentRecord === 'all') && recharge_list && recharge_list.map((element, id) => {
                     // red-800
                     return (
-                        <div key={id} className="bg-red-600 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
-                            <div className='flex justify-between items-center'>
+                        <div key={id} className="bg-sky-200 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
+                            <div className='flex justify-between items-start'>
                                 <div className='flex flex-col gap-1'>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Recharge Value:</span> &#8377;{new Intl.NumberFormat().format(element.recharge_value)}</div>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Ref No:</span> {element.refno}</div>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Status:</span> {nameMapper[String(element.status)]}</div>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Date:</span> {new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
-
+                                    <div className='text-blue-800'>{new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
+                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Ref No. - </span>{element.refno}</div>
+                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Recharge - </span>{new Intl.NumberFormat().format(element.recharge_value)}</div>
+                                </div>
+                                <div>
+                                    <div className='bg-red-200 px-2 py-1 rounded-md text-sm text-blue-800'>{nameMapper[String(element.status)]}</div>
                                 </div>
 
                             </div>
@@ -115,13 +116,16 @@ const Record = () => {
 
                 {(currentRecord === 'withdrawals' || currentRecord === 'all') && withdrawal_list && withdrawal_list.map((element, id) => {
                     return (
-                        <div key={id} className="bg-red-600 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
-                            <div className='flex justify-between items-center'>
+                        <div key={id} className="bg-sky-200 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
+                            <div className='flex justify-between items-start'>
                                 <div className='flex flex-col gap-1'>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Withdrawal Amount:</span> &#8377;{new Intl.NumberFormat().format(element.withdrawalAmount)}</div>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Status:</span> {nameMapper[String(element.status)]}</div>
-                                    <div className='text-white text-md overflow-clip'><span className='font-bold text-white'>Date:</span> {new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
+                                    <div className='text-blue-800'>{new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
+                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Withdrawal - </span>{new Intl.NumberFormat().format(element.withdrawalAmount)}</div>
                                 </div>
+                                <div>
+                                    <div className='bg-red-200 px-2 py-1 rounded-md text-sm text-blue-800'>{nameMapper[String(element.status)]}</div>
+                                </div>
+
                             </div>
                         </div>
                     )
