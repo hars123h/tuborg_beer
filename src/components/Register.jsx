@@ -39,15 +39,15 @@ const Register = () => {
     const toaster = (text) => {
         setToasterText(text);
         setToasterShow(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setToasterShow(false);
             //navigate('/mine');
-        },5000);
+        }, 5000);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         document.body.style.backgroundColor = "#962121";
-    },[]);
+    }, []);
 
     const handleRegister = async () => {
 
@@ -72,19 +72,23 @@ const Register = () => {
         // }
         //console.log({ mobno, pwd, cpwd, wpwd, invt });
         setLoading(true);
-        await axios.post(`${BASE_URL}/register`,{mobno, pwd, wpwd, invt})
-            .then(({data}) => {
-                setText('Registration Successful!');
-                localStorage.setItem('uid', data.user_id);
-                setMobno('');
-                setpwd('');
-                setCpwd('');
-                setwpwd('');
-                setInvt('');
-                setTimeout(() => {
-                    navigate('/login');
-                    setLoading(false);
-                }, 2000);
+        await axios.post(`${BASE_URL}/register`, { mobno, pwd, wpwd, invt })
+            .then(({ data }) => {
+                if (data.message === 'Mobile Number already registered!') {
+                    toaster('Mobile Number already registered!');
+                } else {
+                    setText('Registration Successful!');
+                    localStorage.setItem('uid', data.user_id);
+                    setMobno('');
+                    setpwd('');
+                    setCpwd('');
+                    setwpwd('');
+                    setInvt('');
+                    setTimeout(() => {
+                        navigate('/login');
+                        setLoading(false);
+                    }, 2000);
+                }
             })
             .catch((error) => {
                 toaster('Something went wrong');
@@ -94,7 +98,7 @@ const Register = () => {
 
     const handleOTPSend = (otpGenerated) => {
         //console.log(referralCodeGenerator.alpha('lowercase', 6));
-        if(mobno.length!==10) {
+        if (mobno.length !== 10) {
             toaster('Invalid Mobile Number');
             return;
         }
