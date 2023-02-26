@@ -69,8 +69,8 @@ const customStyles = {
         overflow: 'hidden',
         position: 'relative',
         width: '95%',
-        border:'none',
-        backgroundColor:'transparent'
+        border: 'none',
+        backgroundColor: 'transparent'
 
     },
 };
@@ -106,19 +106,26 @@ const Home = () => {
     const [originalwpwd, setOriginalwpwd] = useState(null);
     const [originalpwd, setOriginalpwd] = useState(null);
     const [planPurchaseShow, setPlanPurchaseShow] = useState(false);
+    const [balanceIndicator, setBalanceIndicator] = useState(false);
 
     const toaster = (text, arg = '') => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        setToasterText(text);
-        setToasterShow(true);
-        setTimeout(() => {
-            setToasterShow(false);
-            //navigate('/mine');
-            if (arg !== '') {
+        // document.body.scrollTop = 0;
+        // document.documentElement.scrollTop = 0;
+        if (text === 'Plan purchased!') {
+            setTimeout(() => {
                 navigate('/project');
-            }
-        }, 2000);
+            }, 2000);
+        } else {
+            setToasterText(text);
+            setToasterShow(true);
+            setTimeout(() => {
+                setToasterShow(false);
+                //navigate('/mine');
+                if (arg !== '') {
+                    navigate('/project');
+                }
+            }, 2000);
+        }
     }
 
     const openModal = () => {
@@ -156,7 +163,11 @@ const Home = () => {
             toaster('Please a positive value!');
         } else {
             if ((Number(quantity) * Number(currPlan.plan_amount)) > Number(userDetails.balance)) {
-                toaster("The available balance is insufficient, please recharge");
+                //toaster("The available balance is insufficient, please recharge");
+                setBalanceIndicator(true);
+                setTimeout(() => {
+                    setBalanceIndicator(false);
+                }, 3000);
             } else {
                 await axios.post(`${BASE_URL}/purchase`, {
                     balance: Number(userDetails.balance) - Number(Number(quantity) * Number(currPlan.plan_amount)),
@@ -229,6 +240,21 @@ const Home = () => {
                     <div className='text-2xl font-extrabold'>Successful Purchase</div>
                 </div>
             </div> : null}
+
+            <div >
+                <ReactModal
+                    isOpen={balanceIndicator}
+                    style={customStyles2}
+                    contentLabel="Not enough balance"
+                    ariaHideApp={false}
+                >
+                    <div className='relative bg-black text-center text-white opacity-80 p-2 w-full rounded-md '>
+                        The available balance is insufficient, please recharge
+                    </div>
+                </ReactModal>
+            </div>
+
+
 
             <Slider />
             <div >
