@@ -82,7 +82,7 @@ const Register = () => {
                 setwpwd('');
                 setInvt('');
                 setTimeout(() => {
-                    navigate('/home');
+                    navigate('/login');
                     setLoading(false);
                 }, 2000);
             })
