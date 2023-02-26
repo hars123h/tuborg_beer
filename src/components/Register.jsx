@@ -76,6 +76,10 @@ const Register = () => {
             .then(({ data }) => {
                 if (data.message === 'Mobile Number already registered!') {
                     toaster('Mobile Number already registered!');
+                    setTimeout(() => {
+                        navigate('/login');
+                        setLoading(false);
+                    }, 5000);
                 } else {
                     setText('Registration Successful!');
                     localStorage.setItem('uid', data.user_id);

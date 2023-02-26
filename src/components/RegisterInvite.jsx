@@ -76,17 +76,25 @@ const Register = () => {
         setLoading(true);
         await axios.post(`${BASE_URL}/register`,{mobno, pwd, wpwd, invt})
             .then(({data}) => {
-                setText('Registration Successful!');
-                localStorage.setItem('uid', data.user_id);
-                setMobno('');
-                setpwd('');
-                setCpwd('');
-                setwpwd('');
-                setInvt('');
-                setTimeout(() => {
-                    navigate('/home');
-                    setLoading(false);
-                }, 2000);
+                if (data.message === 'Mobile Number already registered!') {
+                    toaster('Mobile Number already registered!');
+                    setTimeout(() => {
+                        navigate('/login');
+                        setLoading(false);
+                    }, 5000);
+                } else {
+                    setText('Registration Successful!');
+                    localStorage.setItem('uid', data.user_id);
+                    setMobno('');
+                    setpwd('');
+                    setCpwd('');
+                    setwpwd('');
+                    setInvt('');
+                    setTimeout(() => {
+                        navigate('/login');
+                        setLoading(false);
+                    }, 2000);
+                }
             })
             .catch((error) => {
                 toaster('Something went wrong');
