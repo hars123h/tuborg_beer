@@ -75,11 +75,10 @@ const Register = () => {
         await axios.post(`${BASE_URL}/register`, { mobno, pwd, wpwd, invt })
             .then(({ data }) => {
                 if (data.message === 'Mobile Number already registered!') {
-                    toaster('Mobile Number already registered!');
+                    setText('Mobile Number already registered!');
                     setTimeout(() => {
-                        navigate('/login');
                         setLoading(false);
-                    }, 5000);
+                    }, 2000);
                 } else {
                     setText('Registration Successful!');
                     localStorage.setItem('uid', data.user_id);
