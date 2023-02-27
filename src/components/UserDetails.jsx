@@ -103,6 +103,7 @@ export default function User() {
     const [withdrawals, setWithdrawals] = useState([]);
     const [refer1, setRefer1] = useState([]);
     const [refer2, setRefer2] = useState([]);
+    const [refer3, setRefer3] = useState([]);
     const [plans, setPlans] = useState([]);
 
     const [CurrentLevel, setCurrentLevel] = useState('level1');
@@ -133,6 +134,7 @@ export default function User() {
     const getReferDetails = () => {
         var temp1 = [];
         var temp2 = [];
+        var temp3 = [];
 
         location.state.directMember.map(async (id) => {
             const dataTemp = await axios.post(`${BASE_URL}/get_user` ,{ user_id:id }).then(({data})=>data)
@@ -151,6 +153,16 @@ export default function User() {
         });
 
         setRefer2(temp2);
+
+        location.state.in_indirectMember.map(async (id) => {
+            const dataTemp = await axios.post(`${BASE_URL}/get_user` ,{ user_id:id }).then(({data})=>data)
+            if (dataTemp) {
+                temp3.push(dataTemp);
+            }
+        });
+
+        setRefer3(temp3);
+
     }
 
     const getWithdrawals = async () => {
@@ -356,6 +368,7 @@ export default function User() {
                         <Select variant='outlined' onChange={e => setCurrentLevel(e.target.value)} value={CurrentLevel} label="Refer Level">
                             <MenuItem value={"level1"}>Level 1</MenuItem>
                             <MenuItem value={"level2"}>Level 2</MenuItem>
+                            <MenuItem value={"level3"}>Level 3</MenuItem>
                         </Select>
                         {CurrentLevel === 'level1' && <Table size='small'>
                             <TableHead>
@@ -377,7 +390,7 @@ export default function User() {
                                                 <TableCell>&#8377;{Number(element.directRecharge) + Number(element.indirectRecharge)}</TableCell>
                                                 <TableCell>Level 1</TableCell>
                                                 <TableCell>&#8377;{element.recharge_amount}</TableCell>
-                                                <TableCell>{new Date(element.time.seconds * 1000).toDateString()}</TableCell>
+                                                <TableCell>{new Date(element.time).toDateString()}</TableCell>
                                             </TableRow>
                                         )
                                     })
@@ -405,7 +418,35 @@ export default function User() {
                                                 <TableCell>&#8377;{Number(element.directRecharge) + Number(element.indirectRecharge)}</TableCell>
                                                 <TableCell>Level 2</TableCell>
                                                 <TableCell>&#8377;{element.recharge_amount}</TableCell>
-                                                <TableCell>{new Date(element.time.seconds * 1000).toDateString()}</TableCell>
+                                                <TableCell>{new Date(element.time).toDateString()}</TableCell>
+                                            </TableRow>
+                                        )
+                                    })
+                                }
+                            </TableBody>
+                        </Table>}
+
+                        {CurrentLevel === 'level3' && <Table size="small">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Phone Number</TableCell>
+                                    <TableCell>Reward</TableCell>
+                                    <TableCell>Level</TableCell>
+                                    <TableCell>Total Recharge</TableCell>
+                                    <TableCell>Date</TableCell>
+                                </TableRow>
+                            </TableHead>
+
+                            <TableBody>
+                                {
+                                    refer3.map((element) => {
+                                        return (
+                                            <TableRow key={element.user_id}>
+                                                <TableCell>{element.mobno}</TableCell>
+                                                <TableCell>&#8377;{Number(element.directRecharge) + Number(element.indirectRecharge)}</TableCell>
+                                                <TableCell>Level 3</TableCell>
+                                                <TableCell>&#8377;{element.recharge_amount}</TableCell>
+                                                <TableCell>{new Date(element.time).toDateString()}</TableCell>
                                             </TableRow>
                                         )
                                     })

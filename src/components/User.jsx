@@ -228,7 +228,7 @@ export default function User() {
 
     const blockUser = async(UserId) => {
         await axios.post(`${BASE_URL}/add_blocked_users`, {
-            mobileNumber:UserId
+            user_id:UserId
         })
         .then(()=>toast('User Blocked'))
         .catch((error)=>toast('Something went wrong'));
