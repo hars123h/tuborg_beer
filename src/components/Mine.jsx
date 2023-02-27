@@ -234,7 +234,7 @@ const Mine = () => {
           </div>
         </div>
 
-        <div className="flex items-center border-b border-gray-300 py-2" onClick={() => (isBetween() || true) ?
+        <div className="flex items-center border-b border-gray-300 py-2" onClick={() => isBetween() ?
           navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } }) : toaster('You are not in the withdrawl time window')
         }>
           <div className='w-[10%]'><img src={asset6} alt="setting" className=' w-6 h-6' /></div>
