@@ -1,19 +1,19 @@
 {
-  "short_name": "TuborgBeer85",
+  "short_name": "Chevronoil65",
   "name": "WebApp",
   "icons": [
     {
-      "src": "tuborg_logo_png.png",
+      "src": "clogo.png",
       "sizes": "200x54",
       "type": "image/x-icon"
     },
     {
-      "src": "tuborg_logo_png.png",
+      "src": "clogo.png",
       "type": "image/png",
       "sizes": "200x54"
     },
     {
-      "src": "tuborg_logo_png.png",
+      "src": "clogo.png",
       "type": "image/png",
       "sizes": "200x54"
     }

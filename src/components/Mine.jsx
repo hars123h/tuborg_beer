@@ -19,6 +19,7 @@ import asset12 from '../images/assets/asset 12.png';
 import asset13 from '../images/assets/asset 13.png';
 import ReactModal from 'react-modal';
 import tuborg_logo from '../images/tuborg_logo.svg';
+import clogo from '../images/chevron/clogo.png';
 
 const customStyles2 = {
   content: {
@@ -168,7 +169,7 @@ const Mine = () => {
     
       <div className="flex flex-col bg-red-800 gap-3 text-white">
         <div className='flex flex-col justify-center items-center gap-1 p-3'>
-          <img src={tuborg_logo} alt="wind_login" width={100} className="bg-white py-2 px-3 rounded-sm" />
+          <img src={clogo} alt="wind_login" width={100} className="bg-white py-2 px-3 rounded-sm" />
           <div className='text-lg'>VIP: {mobileno}</div>
         </div>
 

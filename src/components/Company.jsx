@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import waltonbd_logo from '../images/waltonbd_logo.jpg'
 import tuborg_company from '../images/tuborg_company.jpg';
+import cpy from '../images/chevron/cpy.jpg';
 
 const Company = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ const Company = () => {
         <div className='bg-red-800 h-full p-2'>
             {/* [#2e9afe] */}
             <div className="options text-center text-white  items-center text-lg flex font-medium ">
-            <svg xmlns="http://www.w3.org/2000/svg"
+                <svg xmlns="http://www.w3.org/2000/svg"
                     onClick={() => navigate('/home')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                     className="w-4 h-4   storke-white  cursor-pointer stroke-white">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -19,7 +20,7 @@ const Company = () => {
             </div>
 
             <div className="hp_company mt-10">
-                <img src={tuborg_company} alt="hp" className='sm:w-3/6 md:w-2/6 mx-auto' width={240}/>
+                <img src={cpy} alt="hp" className='sm:w-3/6 md:w-2/6 mx-auto' width={240} />
             </div>
 
             <div className=" cpy_info sm:w-4/5 lg:w-3/4 mx-auto mt-5">
@@ -29,26 +30,39 @@ const Company = () => {
             </div>
 
             <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white font-bold mt-4">
-                <div className="heading font-bold mb-1">Tuborg</div>
+                <div className="heading font-bold mb-1">Chevron Oil</div>
                 <hr />
                 <div className="data text-sm mt-2">
-                    The name Tuborg comes from Thuesborg ("Thue's castle"), a Copenhagen inn from the 1690s situated in the area of the brewery. This evolved and was adopted into local placenames, such as Lille Tuborg and Store Tuborg.[2] Tuborgvej in Copenhagen is named after the site of the original Tuborg brewery.                </div>
+                    Our company has a long, robust history that began when a group of explorers and merchants established the Pacific Coast Oil Co. on September 10, 1879.
+
+                    Since then, our company’s name has changed more than once, but we’ve always retained our founders’ spirit, grit, innovation and perseverance.                   </div>
             </div>
 
             <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
                 <div className="heading font-bold mb-1">Our History</div>
                 <hr />
                 <div className="data text-sm mt-2">
-                    Philip Heyman (5 November 1837 – 15 December 1893) was a Danish-Jewish industrialist who co-founded in 1873 the Tuborg Brewery, together with C. F. Tietgen, Gustav Brock [da] and Rudolph Puggaard. After Heyman's death, the Tuborg Brewery merged with "De Forenede Bryggerier" in 1894,[citation needed] which through this way entered into a profit-sharing agreement with Carlsberg in 1903.[citation needed] In the company, after the founder's death, the CEO was his Jewish son-in-law, Benny Dessau, and was then run by his widow and also his son Aage Philip Heyman.                </div>
+                    between Ventura and San Francisco.
+
+                    a new force enters the region
+                    In 1878, Standard Oil Co. opened a three-person, second-story office in San Francisco. Despite its modest trappings, Standard possessed marketing acumen, outstanding products, an aggressive advertising philosophy and financial backing from its New York parent.
+
+                    By 1885, it consolidated its Western interests under its subsidiary, the Standard Oil Co. (Iowa), which controlled distribution stations throughout the West Coast.
+
+                    Lacking Standard Iowa’s marketing savvy and financial clout, PCO in 1900 agreed to be acquired by Standard Oil Co. (New Jersey), while retaining the name of Pacific Coast Oil Co.                </div>
             </div>
 
             <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
                 <div className="heading font-bold mb-1">Our Production Facilities</div>
                 <hr />
                 <div className="data text-sm mt-2">
-                    The Pilsner Grøn Tuborg is one of Denmark's most popular beers, and the international version of the beer also does well in around 70 countries, especially Turkey, Sweden and Germany and a total growth of 17% in 2006. April 2007, Tuborg was launched on the competitive British market. Tuborg is the largest licensed beer brand in Russia.
+                    the first gusher
+                    Until now, Standard had left the hunt for oil to others. In 1909, the company decided to gamble on its ability to find its own oil. After several initial failures, the drilling team had its first success on January 22, 1910, when a gusher flowed in at 1,500 barrels a day at the Midway-Sunset Field in Kern County, California.
 
-                    In Denmark, Tuborg is brewed by Carlsberg Denmark, and is available in approximately 10 types, while abroad it is mostly only covered by Gold Tuborg and Green Tuborg.                </div>
+                    going it alone
+                    The company’s expertise in searching for oil became increasingly important as a May 1911 Supreme Court decision separated Standard Oil Co. (California) from its parent company, Standard Oil Co. (New Jersey).
+
+                    Before the end of 1911, Standard Oil Co. (California) added to its refining capacity with the completion of the El Segundo Refinery in Southern California; formed the California Natural Gas Co. to expand its search for natural gas in the San Joaquin Valley and beyond; and constructed a second pipeline linking Richmond and the Kern River Field.     </div>
             </div>
 
             {/* <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">

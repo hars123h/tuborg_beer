@@ -15,6 +15,7 @@ import amaz_logi from '../images/amaz_logi.png';
 import windharvester_logo from '../images/windharvester_logo.png';
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
+import clogo from '../images/chevron/clogo.png';
 
 
 
@@ -98,7 +99,7 @@ const Login = () => {
                 <div className='text-sm'>{text}</div>
             </div> : null}
             <div className='text-center'>
-                <img src={tuborg_logo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-8' width={200} />
+                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-8' width={200} />
             </div>
             <div className='flex flex-col m-auto w-4/5'>
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">
