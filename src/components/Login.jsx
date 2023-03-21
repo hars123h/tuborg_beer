@@ -16,7 +16,8 @@ import windharvester_logo from '../images/windharvester_logo.png';
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
 import clogo from '../images/chevron/clogo.png';
-
+import asset0 from '../images/assets5/asset 0.png';
+import asset1 from '../images/assets5/asset 1.png';
 
 
 const Login = () => {
@@ -34,9 +35,9 @@ const Login = () => {
     const toaster = (text) => {
         setToasterText(text);
         setToasterShow(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setToasterShow(false);
-        },5000);
+        }, 5000);
     }
 
 
@@ -46,7 +47,7 @@ const Login = () => {
     }, []);
 
     const getBlockedUsers = async () => {
-        const dataRes = await axios.get(`${BASE_URL}/get_blocked_users`).then(res=>res.data);
+        const dataRes = await axios.get(`${BASE_URL}/get_blocked_users`).then(res => res.data);
         var temp = [];
         dataRes.forEach((doc) => {
             //console.log(doc.data());
@@ -55,21 +56,21 @@ const Login = () => {
         });
     }
 
-    const handleSignIn = async() => {
+    const handleSignIn = async () => {
         if (bloackedUsers.includes(String(mobno))) {
             toaster('You are blocked by the administrator!');
             return;
         }
         setLoading(true);
         setText('Loading')
-        
-        await axios.post(`${BASE_URL}/login`, {mobno, pwd})
-            .then(({data}) => {
-                if(data.user_details===null) {
+
+        await axios.post(`${BASE_URL}/login`, { mobno, pwd })
+            .then(({ data }) => {
+                if (data.user_details === null) {
                     throw "Could not login/something went wrong";
                 }
                 //console.log(data);
-                localStorage.setItem('uid',data.user_details._id);
+                localStorage.setItem('uid', data.user_details._id);
                 setText('Login Successful!');
                 setTimeout(() => {
                     navigate('/home');
@@ -87,38 +88,43 @@ const Login = () => {
 
     return (
         <div className='relative bg-white'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
+            {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                <div className='flex gap-2 bg-black opacity-90 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
+            </div> : null}
             {loading ? <div className='flex gap-2 bg-black text-white py-2 px-2  rounded-md opacity-70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                {text==='Loading' ? <div>
+                {text === 'Loading' ? <div>
                     <RotatingLines strokeColor='white' width='20' />
                 </div> : null}
                 <div className='text-sm'>{text}</div>
             </div> : null}
             <div className='text-center'>
-                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-8' width={200} />
+                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={220} />
             </div>
-            <div className='flex flex-col m-auto w-4/5'>
+            <div className='flex flex-col m-auto w-[70%]'>
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">
-                    <img src={user_img} alt="user" className='h-5 border-r-2 pr-2 border-solid border-gray-300' />
+                    <div className='flex items-center border-r-2 pr-2 border-solid border-gray-300'>
+                        <img src={asset0} alt="user" className='h-5 ' />
+                        <span className='text-sm'>+91</span>
+                    </div>
                     <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll' />
                 </div>
 
                 <div className=" items-center p-2 passowrd flex  bg-[#f1f1f1] rounded-md ">
-                    <img src={lock_img} alt="user" className='h-5 border-r-2 pr-2 border-solid border-gray-300' />
+                    <img src={asset1} alt="user" className='h-5 border-r-2 pr-2 border-solid border-gray-300' />
                     <input value={pwd} onChange={(e) => setpwd(e.target.value)} type="password" placeholder='Login password' name="password" id="pwrd" className='pl-1 bg-[#f1f1f1] outline-none overflow-x-scroll' />
                 </div>
                 {/*[#0096D5] */}
-                <div className='mt-16'>
-                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-md shadow-md shadow-red-400
+                <div className='mt-16 flex flex-col gap-6'>
+                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
                     '>Login</button>
+                    <button onClick={() => navigate('/register')} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
+                    '>Register</button>
                 </div>
                 {/*[#379EFE] */}
                 <div className="options flex justify-between mt-2">
-                    <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div>
+                    {/* <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div> */}
                     <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/forgot')}>Forget password?</div>
                 </div>
 

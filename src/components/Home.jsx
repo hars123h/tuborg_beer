@@ -331,7 +331,7 @@ const Home = () => {
             </div>
 
             {/*Marquee Implementation*/}
-            <div className="bg-red-800 rounded-md items-center px-2 text-white relative flex overflow-x-hidden h-12 mx-auto mt-2 border-2 border-gray-100 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
+            {/* <div className="bg-red-800 rounded-md items-center px-2 text-white relative flex overflow-x-hidden h-12 mx-auto mt-2 border-2 border-gray-100 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
                 <div>
                     <VolumeUpOutlined />
                 </div>
@@ -342,7 +342,7 @@ const Home = () => {
                     <span className="mx-4 text sm">91770***28 Member withdrawl 500 Rs</span>
                     <span className="mx-4 text sm">91983***17 Member withdrawl 100000 Rs</span>
                 </div>
-            </div>
+            </div> */}
 
             {/*Navigation bar */}
             <div className="bg-red-800 rounded-lg text-white relative flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
@@ -387,65 +387,65 @@ const Home = () => {
                             <div className='grid grid-cols-1 gap-4'>
                                 {userDetails && (amountDetails.plan_state[0] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 1"} plan_cycle={120} plan_daily_earning={110} plan_amount={490} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 1"} plan_cycle={90} plan_daily_earning={110} plan_amount={450} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 1"} plan_cycle={120} plan_daily_earning={110} plan_amount={490} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 1"} plan_cycle={90} plan_daily_earning={110} plan_amount={450} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[1] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 2"} plan_cycle={110} plan_daily_earning={408} plan_amount={1600} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 2"} plan_cycle={90} plan_daily_earning={320} plan_amount={1100} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item2} handleClick={handleClick} plan_name={"itemBeer 2"} plan_cycle={110} plan_daily_earning={408} plan_amount={1600} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item2} handleClick={handleClick} plan_name={"itemBeer 2"} plan_cycle={90} plan_daily_earning={320} plan_amount={1100} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[2] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 3"} plan_cycle={100} plan_daily_earning={1320} plan_amount={4900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 3"} plan_cycle={90} plan_daily_earning={510} plan_amount={1850} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 3"} plan_cycle={100} plan_daily_earning={1320} plan_amount={4900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 3"} plan_cycle={90} plan_daily_earning={510} plan_amount={1850} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[3] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 4"} plan_cycle={90} plan_daily_earning={3915} plan_amount={13900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 4"} plan_cycle={90} plan_daily_earning={1540} plan_amount={5100} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 4"} plan_cycle={90} plan_daily_earning={3915} plan_amount={13900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 4"} plan_cycle={90} plan_daily_earning={1540} plan_amount={5100} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[4] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 5"} plan_cycle={80} plan_daily_earning={8500} plan_amount={28900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 5"} plan_cycle={90} plan_daily_earning={4660} plan_amount={15200} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 5"} plan_cycle={80} plan_daily_earning={8500} plan_amount={28900} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 5"} plan_cycle={90} plan_daily_earning={4660} plan_amount={15200} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[5] === 0) ? (
                                     <span className='pointer-events-none'>
-                                        <Card product_type={"long"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 6"} plan_cycle={80} plan_daily_earning={16550} plan_amount={48000} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 6"} plan_cycle={90} plan_daily_earning={9100} plan_amount={28500} plan_type={'Big Plan'} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <Card product_type={"long"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 6"} plan_cycle={80} plan_daily_earning={16550} plan_amount={48000} plan_type={'Big Plan'} />
+                                        <Card product_type={"long"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 6"} plan_cycle={90} plan_daily_earning={9100} plan_amount={28500} plan_type={'Big Plan'} />
                                     </span>
                                 )}
 
-                                {userDetails && (amountDetails.plan_state[6] === 0) ? (
+                                {/* {userDetails && (amountDetails.plan_state[6] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card product_type={"long"} product_image={item7} handleClick={handleClick} plan_name={"Chevron Oil 7"} plan_cycle={60} plan_daily_earning={33000} plan_amount={76000} plan_type={'Big Plan'} />
                                     </span>
@@ -453,7 +453,7 @@ const Home = () => {
                                     <span>
                                         <Card product_type={"long"} product_image={item7} handleClick={handleClick} plan_name={"Chevron Oil 7"} plan_cycle={60} plan_daily_earning={33000} plan_amount={76000} plan_type={'Big Plan'} />
                                     </span>
-                                )}
+                                )} */}
 
                                 {/* {userDetails && (amountDetails.plan_state[7] === 0) ? (
                                     <span className='pointer-events-none'>
@@ -484,62 +484,62 @@ const Home = () => {
 
                 {currentVisible === 'short' && amountDetails?.plan_state && userDetails && (
                     <div className={`grid grid-cols-1 gap-4`}>
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[6] === 0) ?
                             (
                                 <span className='pointer-events-none'>
                                     {/* <span>hi</span> */}
-                                    <Card product_type={"short"} product_image={item1} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
+                                    <Card product_type={"short"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 7"} plan_cycle={8} plan_daily_earning={280} plan_amount={600} plan_type={'Short Plan'} />
                                 </span>
                             ) :
                             <span>
-                                <Card product_type={"short"} product_image={item1} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={item1} handleClick={handleClick} plan_name={"Chevron Oil 7"} plan_cycle={8} plan_daily_earning={280} plan_amount={600} plan_type={'Short Plan'} />
                             </span>
                         }
 
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 8"} plan_cycle={8} plan_daily_earning={700} plan_amount={1600} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={item2} handleClick={handleClick} plan_name={"Chevron Oil 8"} plan_cycle={8} plan_daily_earning={700} plan_amount={1600} plan_type={'Short Plan'} />
+                            </span>
+                            )}
+
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
+                            (<span className='pointer-events-none'>
+                                <Card product_type={"short"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 9"} plan_cycle={8} plan_daily_earning={1600} plan_amount={3400} plan_type={'Short Plan'} />
+                            </span>) :
+                            (<span className=''>
+                                <Card product_type={"short"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 9"} plan_cycle={8} plan_daily_earning={1600} plan_amount={3400} plan_type={'Short Plan'} />
                             </span>
                             )}
 
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[9] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 10"} plan_cycle={8} plan_daily_earning={4600} plan_amount={9000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={item3} handleClick={handleClick} plan_name={"Chevron Oil 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 10"} plan_cycle={8} plan_daily_earning={4600} plan_amount={9000} plan_type={'Short Plan'} />
                             </span>
                             )}
 
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[10] === 0) ?
-                            (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
-                            </span>) :
-                            (<span className=''>
-                                <Card product_type={"short"} product_image={item4} handleClick={handleClick} plan_name={"Chevron Oil 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
-                            </span>
-                            )}
-
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[11] === 0) ?
+                        {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[11] === 0) ?
                             (<span className='pointer-events-none'>
                                 <Card product_type={"short"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 11"} plan_cycle={4} plan_daily_earning={50000} plan_amount={30000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
                                 <Card product_type={"short"} product_image={item5} handleClick={handleClick} plan_name={"Chevron Oil 11"} plan_cycle={4} plan_daily_earning={50000} plan_amount={30000} plan_type={'Short Plan'} />
                             </span>
-                            )}
+                            )} */}
 
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[12] === 0) ?
+                        {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[12] === 0) ?
                             (<span className='pointer-events-none'>
                                 <Card product_type={"short"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 12"} plan_cycle={5} plan_daily_earning={120000} plan_amount={60000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
                                 <Card product_type={"short"} product_image={item6} handleClick={handleClick} plan_name={"Chevron Oil 12"} plan_cycle={5} plan_daily_earning={120000} plan_amount={60000} plan_type={'Short Plan'} />
                             </span>
-                            )}
+                            )} */}
 
                         {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[15] === 0) ?
                             (<span className='pointer-events-none'>
