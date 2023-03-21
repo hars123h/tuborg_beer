@@ -248,7 +248,7 @@ const Mine = () => {
           </div>
         </div>
 
-        <a href="https://t.me/TuborgbeerApp1" className=' no-underline  cursor-pointer'>
+        <a href="https://telegram.me/chevronoil55" className=' no-underline  cursor-pointer'>
           <div className="flex items-center border-b border-gray-300 py-2" >
             <div className='w-[10%]'><img src={asset7} alt="setting" className=' w-6 h-6' /></div>
 
