@@ -102,11 +102,11 @@ const Login = () => {
             <div className='text-center'>
                 <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={220} />
             </div>
-            <div className='flex flex-col m-auto w-[70%]'>
+            <div className='flex flex-col m-auto w-[74%]'>
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">
                     <div className='flex items-center border-r-2 pr-2 border-solid border-gray-300'>
                         <img src={asset0} alt="user" className='h-5 ' />
-                        <span className='text-sm'>+91</span>
+                        <span className='text-sm mb-1'>+91</span>
                     </div>
                     <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll' />
                 </div>
@@ -117,14 +117,15 @@ const Login = () => {
                 </div>
                 {/*[#0096D5] */}
                 <div className='mt-16 flex flex-col gap-6'>
-                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
+                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-md shadow-md shadow-red-800
                     '>Login</button>
-                    <button onClick={() => navigate('/register')} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
-                    '>Register</button>
+                    {/* <button onClick={() => navigate('/register')} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
+                    '>Register</button> */}
                 </div>
                 {/*[#379EFE] */}
                 <div className="options flex justify-between mt-2">
                     {/* <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div> */}
+                    <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div>
                     <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/forgot')}>Forget password?</div>
                 </div>
 
