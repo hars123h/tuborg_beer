@@ -307,11 +307,11 @@ const Home = () => {
                                 <div>Welcome to Chevron Oil investment Platform</div>
                                 <div>Let Chevron Oil create unlimited wealth with you.</div>
                                 <div>The Chevron Oil85 APP is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 490 &#8377; Earn 110 &#8377; Daily</div>
-                                <div>Invest 1600 &#8377; Earn 408 &#8377; Daily</div>
-                                <div>Invest 4900 &#8377; Earn 1320 &#8377; Daily</div>
-                                <div>Invest 13900 &#8377; Earn 3915 &#8377; Daily</div>
-                                <div>Invest 289000 &#8377; Earn 8500 &#8377; Daily</div>
+                                <div>Invest 450 &#8377; Earn 110 &#8377; Daily</div>
+                                <div>Invest 1100 &#8377; Earn 320 &#8377; Daily</div>
+                                <div>Invest 1850 &#8377; Earn 510 &#8377; Daily</div>
+                                <div>Invest 5100 &#8377; Earn 1540 &#8377; Daily</div>
+                                <div>Invest 15200 &#8377; Earn 4660 &#8377; Daily</div>
                             </div>
 
                             <div className='border-t border-gray-600 my-1'></div>
