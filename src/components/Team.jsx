@@ -107,16 +107,16 @@ const Team = () => {
       {/*userDetails.directRecharge * (amountDetails.level1_percent) / 100) + (userDetails.indirectRecharge * (amountDetails.level2_percent) / 100) + (userDetails.in_indirectRecharge * (amountDetails.level3_percent) / 100 */}
       <div className="flex border-b border-gray-300">
         <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
-          <div className='text-gray-700 text-[10px] leading-3'>Team assets (&#8377;)</div>
-          <div className='text-blue-800 text-2xl'>&#8377;{assetValue}</div>
+          <div className='text-gray-700 text-[9px] leading-3'>Team assets (&#8377;)</div>
+          <div className='text-blue-800 text-[20px]'>&#8377;{assetValue}</div>
         </div>
         <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
-          <div className='text-gray-700 text-[10px] leading-3'>Team recharge (&#8377;)</div>
-          <div className='text-blue-800 text-2xl'>&#8377;{(userDetails.directRecharge + userDetails.indirectRecharge + userDetails.in_indirectRecharge)}</div>
+          <div className='text-gray-700 text-[9px] leading-3'>Team recharge (&#8377;)</div>
+          <div className='text-blue-800 text-[20px]'>&#8377;{(userDetails.directRecharge + userDetails.indirectRecharge + userDetails.in_indirectRecharge)}</div>
         </div>
         <div className="flex flex-col w-1/3 pt-1 px-2">
-          <div className='text-gray-700 text-[10px] leading-3'>Team Number</div>
-          <div className='text-blue-800 text-2xl'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
+          <div className='text-gray-700 text-[9px] leading-3'>Team Number</div>
+          <div className='text-blue-800 text-[20px]'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
         </div>
       </div>
 
