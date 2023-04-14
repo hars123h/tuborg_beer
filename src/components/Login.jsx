@@ -15,10 +15,9 @@ import amaz_logi from '../images/amaz_logi.png';
 import windharvester_logo from '../images/windharvester_logo.png';
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
-import clogo from '../images/chevron/clogo.png';
 import asset0 from '../images/assets5/asset 0.png';
 import asset1 from '../images/assets5/asset 1.png';
-
+import clogo from '../images/okinawascoters/ologo.jpg';
 
 const Login = () => {
 

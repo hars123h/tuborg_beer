@@ -21,6 +21,18 @@ const Record = () => {
     const [withdrawal_list, setWithdrawal_list] = useState([]);
     const [currentRecord, setCurrentRecord] = useState('recharges');
 
+    const getFormat = (new_date) => {
+        const dte = new Date(new_date);
+        const day = dte.getDate();
+        const month = dte.getMonth();
+        const year = dte.getFullYear();
+        const hour = dte.getHours();
+        const minutes = dte.getMinutes();
+        const seconds = dte.getSeconds();
+        //console.log(day, month, year, hour, minutes, seconds);
+        return day + "-" + month + "-" + year + " " + hour + "-" + minutes + "-" + seconds;
+    }
+
 
     const getRecharges_list = async () => {
 
@@ -101,12 +113,13 @@ const Record = () => {
                         <div key={id} className="bg-sky-200 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
                             <div className='flex justify-between items-start'>
                                 <div className='flex flex-col gap-1'>
-                                    <div className='text-blue-800'>{new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
+
+                                    <div className='text-red-700 font-[500]'>{getFormat(element.time)}</div>
                                     <div className='text-blue-800'><span className='text-red-800 font-medium'>Ref No. - </span>{element.refno}</div>
-                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Recharge - </span>{new Intl.NumberFormat().format(element.recharge_value)}</div>
+                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Recharge +</span>{new Intl.NumberFormat().format(element.recharge_value)}</div>
                                 </div>
                                 <div>
-                                    <div className='bg-red-200 px-2 py-1 rounded-md text-sm text-blue-800'>{nameMapper[String(element.status)]}</div>
+                                    <div className='bg-red-300 px-2 py-1 rounded-md text-sm text-white'>{nameMapper[String(element.status)]}</div>
                                 </div>
 
                             </div>
@@ -119,11 +132,11 @@ const Record = () => {
                         <div key={id} className="bg-sky-200 rounded-lg shadow-md p-2 text-white mt-2 mx-2">
                             <div className='flex justify-between items-start'>
                                 <div className='flex flex-col gap-1'>
-                                    <div className='text-blue-800'>{new Date(element.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</div>
-                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Withdrawal - </span>{new Intl.NumberFormat().format(element.withdrawalAmount)}</div>
+                                    <div className='text-red-700 font-[500]'>{getFormat(element.time)}</div>
+                                    <div className='text-blue-800'><span className='text-red-800 font-medium'>Withdrawal -</span>{new Intl.NumberFormat().format(element.withdrawalAmount)}</div>
                                 </div>
                                 <div>
-                                    <div className='bg-red-200 px-2 py-1 rounded-md text-sm text-blue-800'>{nameMapper[String(element.status)]}</div>
+                                    <div className='bg-red-300 px-2 py-1 rounded-md text-sm text-white'>{nameMapper[String(element.status)]}</div>
                                 </div>
 
                             </div>

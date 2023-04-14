@@ -1,70 +1,76 @@
 import React from 'react';
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {getAuth} from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AmountContext } from '../App.js';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import axios from 'axios';
 import BASE_URL from '../api_url.js';
+import img1 from '../images/asml/assets/asset 1.png';
+import img2 from '../images/asml/assets/asset 2.png';
+import img3 from '../images/asml/assets/asset 3.png';
+import img4 from '../images/asml/assets/asset 4.png';
+import img5 from '../images/asml/assets/asset 5.png';
+import img6 from '../images/asml/assets/asset 6.png';
 
 const RechargeWindow = () => {
 
     const { recharge_value } = useParams();
     const [refno, setRefno] = useState('');
-    const amountDetails  = useContext(AmountContext);
+    const amountDetails = useContext(AmountContext);
     const navigate = useNavigate();
     const auth = getAuth();
     const [userDetails, setUserDetails] = useState(null);
     const [toasterShow, setToasterShow] = useState(false);
     const [toasterText, setToasterText] = useState('');
 
-    const toaster = (text, arg='') => {
+    const toaster = (text, arg = '') => {
         setToasterText(text);
         setToasterShow(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setToasterShow(false);
             //navigate('/mine');
-            if(arg==='/record') {
+            if (arg === '/record') {
                 navigate('/record');
             }
-        },5000);
+        }, 5000);
     }
 
-    const getUserDetails = async() => {
-        const  user_info = await axios.post(`${BASE_URL}/get_user`, {user_id:localStorage.getItem('uid')}).then(({data})=>data);
+    const getUserDetails = async () => {
+        const user_info = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
         setUserDetails(user_info);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         //console.log(amountDetails)
         getUserDetails();
-    },[]);
+    }, []);
 
 
 
     const handleRecharge = async () => {
         //console.log({ refno, recharge_value, status: 'pending' });
-        if(refno.length!==12) {
+        if (refno.length !== 12) {
             toaster('Enter a valid Ref No. of 12 digits');
             return;
         }
         try {
-            await axios.post(`${BASE_URL}/place_recharge`, { 
-                refno, 
-                recharge_value, 
-                status: 'pending', 
-                user_id: localStorage.getItem('uid'), 
-                mobno:userDetails.mobno, 
-                time:new Date(),
+            await axios.post(`${BASE_URL}/place_recharge`, {
+                refno,
+                recharge_value,
+                status: 'pending',
+                user_id: localStorage.getItem('uid'),
+                mobno: userDetails.mobno,
+                time: new Date(),
                 parent_id: userDetails.parent_id,
-                grand_parent_id: userDetails.grand_parent_id?userDetails.grand_parent_id:'',
-                great_grand_parent_id: userDetails.great_grand_parent_id?userDetails.great_grand_parent_id:''
-             }).then((response)=>{
+                grand_parent_id: userDetails.grand_parent_id ? userDetails.grand_parent_id : '',
+                great_grand_parent_id: userDetails.great_grand_parent_id ? userDetails.great_grand_parent_id : ''
+            }).then((response) => {
                 console.log('Recharge placed successfully!');
-             })
-            
+            })
+
             //console.log("Document written with ID: ", docRef1.id, docRef2.id);
             toaster('Request Placed Successfully!', '/record');
             setRefno('');
@@ -74,53 +80,58 @@ const RechargeWindow = () => {
     }
 
     return (
-        <div className='sm:h-[700px] md:h-[950px] flex flex-col gap-4  bg-white relative'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
+        <div className='sm:h-[700px] md:h-[950px] flex flex-col   bg-white relative'>
+            {toasterShow ? <div className='absolute top-[350px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                <div className='flex gap-2 bg-black opacity-100 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
-            <div className="options text-center text-white flex gap-2 items-center p-2  bg-red-800 text-lg pt-2 font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                    onClick={() => navigate('/mine')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-                    className="w-4 h-4   storke-white  cursor-pointer stroke-white">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-                <div className='flex-grow'>Payment Window</div>
+            </div> : null}
+            <div className="options items-center justify-start text-white flex gap-5  p-6  bg-[#e71111]  h-[115px]">
+                {/* <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/mine')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6  storke-white  cursor-pointer">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg> */}
+                <div className='text-3xl p-1'>UPIPAY</div>
+                <div className='mt-3 p-1'>UPI Cashier</div>
             </div>
-            <div className='flex flex-col gap-4 p-8'>
 
-                <div className='font-bold text-xl text-red-800'>UPI Information</div>
-                <div className="box flex rounded-lg p-6 flex-col mt-3 bg-red-800 text-white">
-                    <div className='text-md'>Payment Amount</div>
-                    <div className='text-4xl'>&#8377; {recharge_value}</div>
-                </div>
-
-                <div className='font-bold text-xl text-red-800'>Payment Via UPI</div>
-                <div className="step_one flex flex-col gap-1">
-                    <div className='text-md'>1.Copy UPI information</div>
-                    <div className='flex rounded-md items-center justify-between gap-2  p-2 border-2 border-red-800'>
-                        <div className='text-red-800 font-bold'>{amountDetails.upi_id}</div>
-                        <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('Copied to clipboard')}>
-                        <div className='text-lg font-bold text-red-800 cursor-pointer'>Copy</div>
+            <div className='flex flex-col items-center gap-1 mt-4'>
+                <CopyToClipboard text={`${recharge_value}`} onCopy={() => toaster('Copied to clipboard')}>
+                    <div className='mb-1 text-xs text-gray-600 font-semibold'>click the amount to copy</div>
                 </CopyToClipboard>
-                        
-                    </div>
+                <div className='text-6xl font-bold'>&#8377; {recharge_value}.00</div>
+                <div className='text-md'><span className='text-gray-400 font-semibold mr-2 pt-4'>Serial No.</span> 1643489836485865684</div>
+            </div>
+
+            <div className='flex flex-col p-2 gap-1 border-b border-gray-100'>
+                <div className='text-sm border-y-2 border-gray-50 py-3 tl'><span >Step 1: Transfer</span><span className='text-[#d375de] ml-2'>&#8377; {recharge_value}.00 to the following upi</span></div>
+                <div className="flex flex-col items-center w-full">
+                    <div className='text-center bg-[#f5f8c2] py-3 mt-1 text-lg mb-4 w-full'>{amountDetails.upi_id}</div>
+                    <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('Copied to clipboard')}>
+                        <div className='text-sm px-3 py-1 text-red-800 cursor-pointer border border-red-800 rounded-md'>Copy Beneficiary UPI</div>
+                    </CopyToClipboard>
                 </div>
+                <div className='tt mb-1 mt-3'>1. Open your UPI wallet and complete the transfer </div>
+                <div className='tt'>2. Record your reference No.(Ref No.) after payment</div>
+            </div>
 
-                <div>2. Transfer the amount you want to recharge to us by UPI transfer.</div>
-                <div>3. Please enter Ref No. to complete the recharge.</div>
+            <div className='flex flex-col px-2 gap-1 border-b border-gray-100'>
+                <div className='text-sm border-y-2 border-gray-50 py-3 tl'><span >Step 2: Submit Ref No/Reference No/UTR </span></div>
+                <input value={refno} onChange={e => setRefno(e.target.value)} type="text" placeholder='Input 12-digit here' className=' tp pt-4' />
+                <div className='tt ml-2 mb-3'>Generally, your transfer will be confirmed within 10 minutes.</div>
+            </div>
 
-                <div className='flex rounded-md justify-between gap-2 text-red-800  p-2 border-2 border-red-800'>
-                    <input value={refno} onChange={e => setRefno(e.target.value)} type="text" placeholder='REF NO.' className=' bg-inherit outline-none flex-grow' />
-                </div>
+            <div className='flex flex-col px-4 gap-2 py-2 border-b border-gray-100 bg-[#f1f1f1] pb-[100px]'>
+                <div className='tt mb-1 mt-1'>Where to find Ref No.</div>
+                <img src={img1} alt="img1" />
+                <img src={img2} alt="img1" />
+                <img src={img3} alt="img1" />
+                <img src={img4} alt="img1" />
+                <img src={img5} alt="img1" />
+                <img src={img6} alt="img1" />
+            </div>
 
-                <div className="small_info text-sm font-extrabold  underline text-red-800">
-                    Please enter the REF NO./ Reference No./UTR 12-digit number of your transfer and we will finish your recharge as soon as possible.
-                </div>
-
-                <button onClick={handleRecharge} className='bg-red-800 text-white p-4 rounded-lg text-lg shadow-lg shadow-gray-400'>Submit</button>
-
+            <div className="fixed bottom-0 border-t border-[#fbae7b] w-full bg-[#f7f7fa] ">
+                <button onClick={handleRecharge} className='bg-[#ff6600] py-2 text-white text-lg w-full rounded-md my-5'>Submit Ref. Number</button>
             </div>
 
         </div>

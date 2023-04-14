@@ -12,6 +12,14 @@ const addDays = (date, days) => {
     return result;
 }
 
+const getFormat = (dte) => {
+    
+    const day = dte.getDate();
+    const month = dte.getMonth();
+    const year = dte.getFullYear();
+    return day+"-"+month+"-"+year;
+}
+
 
 const Project = () => {
     const navigate = useNavigate();
@@ -137,45 +145,46 @@ const Project = () => {
 
     //[#2e9afe]
     return (
-        <div className='md:h-screen overflow-y-scroll xs:h-[700px] bg-red-800 h-screen relative'>
+        <div className='md:h-screen overflow-y-scroll xs:h-[700px] bg-white h-screen relative'>
             {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
             </div> : null}
 
-            <div className="options flex items-center text-center bg-red-800 text-white text-md pt-1 px-1 font-normal pb-2">
+            <div className="options flex items-center text-center bg-red-800 text-white text-md pt-3 px-1 font-normal pb-3">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-                    className="w-4 h-4   storke-white  cursor-pointer stroke-white">
+                    className="w-4 h-4  ml-2 storke-white  cursor-pointer stroke-white">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
                 <div className='flex-grow'>Project Record</div>
             </div>
 
 
-            <div className='records w-full flex bg-[#d3d6fe] items-center'>
-                <div onClick={() => setCurrent_tab('earning')} className={`cursor-pointer h-[40px] flex items-center justify-center w-1/2 text-center border-b-4 font-semibold ${current_tab === 'earning' ? 'border-red-800 text-red-800' : 'text-white'}`}>Earning</div>
-                <div onClick={() => setCurrent_tab('completed')} className={`cursor-pointer h-[40px] flex items-center justify-center w-1/2 text-center border-b-4 ${current_tab === 'completed' ? 'border-red-800 text-red-800' : 'text-white'}`}>Completed</div>
+            <div className='records w-full flex bg-white items-center mt-4'>
+                <div onClick={() => setCurrent_tab('earning')} className={`cursor-pointer h-[40px] flex items-center justify-center w-1/2 text-center border-b-4 border-t border-x font-semibold ${current_tab === 'earning' ? 'border-red-800 text-red-800' : 'text-gray-400'}`}>Income</div>
+                <div onClick={() => setCurrent_tab('completed')} className={`cursor-pointer h-[40px] flex items-center justify-center w-1/2 text-center border-b-4 border-t border-x font-semibold ${current_tab === 'completed' ? 'border-red-800 text-red-800' : 'text-gray-400'}`}>Finish</div>
             </div>
 
-            <div className=' mx-auto w-[95%] mt-2 p-2 pb-10'>
+            <div className=' mx-auto w-[95%] mt-2 p-1 pb-10'>
                 {
                     current_tab === 'earning' && userDetails && ('plans_purchased' in userDetails) && (
                         userDetails.plans_purchased.map((element, index) => {
                             if (element.plan_daily_earning * element.plan_cycle !== DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning) {
                                 return (
-                                    <div key={index} className='mx-auto w-[90%] mt-2 border-x-2 border-white border-b-2  rounded-lg shadow-lg shadow-red-700 text-white'>
-                                        <div className="text-lg p-3 text-red-800 font-semibold bg-white rounded-t-lg">Plan Details</div>
-                                        <div className='p-3'>
-                                            <div className='mb-1'>Plan Name: {element.plan_name}</div>
-                                            <div className='mb-1'>Start Date: {element.date_purchased}</div>
-                                            <div className='mb-1'>Plan Amount: &#8377;{element.plan_amount}</div>
-                                            <div className='mb-1'>Plan Type: {element.plan_type}</div>
-                                            <div className='mb-1'>Plan Cycle: {element.plan_cycle}</div>
-                                            <div className='mb-1'>Plan Daily Earning: &#8377;{element.plan_daily_earning}</div>
-                                            <div className='mb-1'>Quantity: {element.quantity}</div>
-                                            <div className='mb-1'>Current Earning: &#8377;{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</div>
+                                    <div key={index} className='mx-auto  bg-[#f8f8f8] mt-2 py-3 px-1 font-[500]  border-x-2 border-white border-b-2  rounded-lg  text-white'>
+                                        <div className="flex flex-row justify-between items-center w-full">
+                                            <div className="flex flex-col gap-1 w-1/2">
+                                                <div className='text-gray-400'>Plan : <span className='text-red-700'>{element.plan_name}</span></div>
+                                                <div className='text-gray-400'>Income : <span className='text-red-700'>{element.plan_daily_earning}</span></div>
+                                                <div className='text-gray-400'>Complete Time : </div>
+                                            </div>
+                                            <div className="flex flex-col gap-1 w-1/2">
+                                                <div className='text-gray-400'>Time : <span className='text-red-700'>{getFormat(new Date(element.date_purchased))}</span></div>
+                                                <div className='text-gray-400'>Total : <span className='text-red-700'>{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</span></div>
+                                                <div className='text-gray-400'><span className="text-red-700">{getFormat(addDays(new Date(element.date_purchased), Number(element.plan_cycle)))}</span> </div>
+                                            </div>
                                         </div>
                                     </div>
                                 )
@@ -189,17 +198,18 @@ const Project = () => {
                         current_tab === 'completed' && userDetails.plans_purchased.map((element, index) => {
                             if (element.plan_daily_earning * element.plan_cycle === DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning) {
                                 return (
-                                    <div key={index} className='mx-auto w-[90%] mt-2 border-x-2 border-white border-b-2  rounded-lg shadow-lg text-white'>
-                                        <div className="text-lg p-3 text-red-800 font-semibold bg-white rounded-t-lg">Plan Details</div>
-                                        <div className='p-3'>
-                                            <div className='mb-1'>Plan Name: {element.plan_name}</div>
-                                            <div className='mb-1'>Start Date: {element.date_purchased}</div>
-                                            <div className='mb-1'>Plan Amount: &#8377;{element.plan_amount}</div>
-                                            <div className='mb-1'>Plan Type: {element.plan_type}</div>
-                                            <div className='mb-1'>Plan Cycle: {element.plan_cycle}</div>
-                                            <div className='mb-1'>Plan Daily Earning: &#8377;{element.plan_daily_earning}</div>
-                                            <div className='mb-1'>Quantity: {element.quantity}</div>
-                                            <div className='mb-1'>Current Earning: &#8377;{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</div>
+                                    <div key={index} className='mx-auto bg-[#f8f8f8] mt-2 py-3 px-1 font-[500]  border-x-2 border-white border-b-2  rounded-lg  text-white'>
+                                        <div className="flex flex-row justify-between items-center w-full">
+                                            <div className="flex flex-col gap-1 w-1/2">
+                                                <div className='text-gray-400'>Plan : <span className='text-red-700'>{element.plan_name}</span></div>
+                                                <div className='text-gray-400'>Income : <span className='text-red-700'>{element.plan_daily_earning}</span></div>
+                                                <div className='text-gray-400'>Complete Time : </div>
+                                            </div>
+                                            <div className="flex flex-col gap-1 w-1/2">
+                                                <div className='text-gray-400'>Time : <span className='text-red-700'>{getFormat(new Date(element.date_purchased))}</span></div>
+                                                <div className='text-gray-400'>Total : <span className='text-red-700'>{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</span></div>
+                                                <div className='text-gray-400'><span className="text-red-700">{getFormat(addDays(new Date(element.date_purchased), Number(element.plan_cycle)))}</span> </div>
+                                            </div>
                                         </div>
                                     </div>
                                 )

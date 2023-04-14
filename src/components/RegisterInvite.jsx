@@ -15,7 +15,7 @@ import amaz_logi from '../images/amaz_logi.png';
 import { PhoneAndroid, VerifiedUserOutlined, LockOutlined } from '@material-ui/icons';
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
-import clogo from '../images/chevron/clogo.png'
+import clogo from '../images/okinawascoters/ologo.jpg';
 
 
 

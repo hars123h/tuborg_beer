@@ -19,7 +19,7 @@ import asset12 from '../images/assets/asset 12.png';
 import asset13 from '../images/assets/asset 13.png';
 import ReactModal from 'react-modal';
 import tuborg_logo from '../images/tuborg_logo.svg';
-import clogo from '../images/chevron/clogo.png';
+import clogo from '../images/okinawascoters/ologo.jpg';
 
 const customStyles2 = {
   content: {

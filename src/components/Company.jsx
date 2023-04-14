@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import waltonbd_logo from '../images/waltonbd_logo.jpg'
 import tuborg_company from '../images/tuborg_company.jpg';
 import cpy from '../images/chevron/cpy.jpg';
+import compnay_one from '../images/okinawascoters/company_one.png';
+import compnay_two from '../images/okinawascoters/company_two.png';
+
 
 const Company = () => {
     const navigate = useNavigate();
@@ -20,7 +23,7 @@ const Company = () => {
             </div>
 
             <div className="hp_company mt-10">
-                <img src={cpy} alt="hp" className='sm:w-3/6 md:w-2/6 mx-auto' width={240} />
+                <img src={compnay_one} alt="hp" className='sm:w-3/6 md:w-2/6 mx-auto' width={240} />
             </div>
 
             <div className=" cpy_info sm:w-4/5 lg:w-3/4 mx-auto mt-5">
@@ -30,55 +33,50 @@ const Company = () => {
             </div>
 
             <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white font-bold mt-4">
-                <div className="heading font-bold mb-1">Chevron Oil</div>
+                <div className="heading font-bold mb-1">Okinawascoters</div>
                 <hr />
                 <div className="data text-sm mt-2">
-                    Our company has a long, robust history that began when a group of explorers and merchants established the Pacific Coast Oil Co. on September 10, 1879.
-
-                    Since then, our company’s name has changed more than once, but we’ve always retained our founders’ spirit, grit, innovation and perseverance.                   </div>
+                    Crafting of New Technology Begins Here – Okinawa IPR
+                    Our engineers work in a world-class factory where international quality and safety standards are followed to manufacture best quality eco-friendly vehicles. From the beginning to the final finishing, every product goes through more stringent durability and reliability tests than it facts in reality. As a result, the customer gets a complete package which includes technology, quality, comfort, style, affordability and eco-friendliness.    </div>
             </div>
 
             <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
-                <div className="heading font-bold mb-1">Our History</div>
+                <div className="heading font-bold mb-1">ENGINEERING THE FUTURE</div>
                 <hr />
                 <div className="data text-sm mt-2">
-                    between Ventura and San Francisco.
-
-                    a new force enters the region
-                    In 1878, Standard Oil Co. opened a three-person, second-story office in San Francisco. Despite its modest trappings, Standard possessed marketing acumen, outstanding products, an aggressive advertising philosophy and financial backing from its New York parent.
-
-                    By 1885, it consolidated its Western interests under its subsidiary, the Standard Oil Co. (Iowa), which controlled distribution stations throughout the West Coast.
-
-                    Lacking Standard Iowa’s marketing savvy and financial clout, PCO in 1900 agreed to be acquired by Standard Oil Co. (New Jersey), while retaining the name of Pacific Coast Oil Co.                </div>
-            </div>
-
-            <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
-                <div className="heading font-bold mb-1">Our Production Facilities</div>
-                <hr />
-                <div className="data text-sm mt-2">
-                    the first gusher
-                    Until now, Standard had left the hunt for oil to others. In 1909, the company decided to gamble on its ability to find its own oil. After several initial failures, the drilling team had its first success on January 22, 1910, when a gusher flowed in at 1,500 barrels a day at the Midway-Sunset Field in Kern County, California.
-
-                    going it alone
-                    The company’s expertise in searching for oil became increasingly important as a May 1911 Supreme Court decision separated Standard Oil Co. (California) from its parent company, Standard Oil Co. (New Jersey).
-
-                    Before the end of 1911, Standard Oil Co. (California) added to its refining capacity with the completion of the El Segundo Refinery in Southern California; formed the California Natural Gas Co. to expand its search for natural gas in the San Joaquin Valley and beyond; and constructed a second pipeline linking Richmond and the Kern River Field.     </div>
-            </div>
-
-            {/* <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
-                <div className="heading font-bold mb-1">Awards</div>
-                <hr />
-                <div className="data text-sm mt-2">Walton is the No. 1 Manufacturer and Exporter of Refrigerator, Air Conditioner, LED TV, Mobile Phone, Walton has achieved many international & national awards and recognitions like some recent prestigious and best business awards are: The Golden Globe Tiger Award 2015 in the category of Excellence & Leadership Brand, DHL-Daily Star Bangladesh 15th Business Award 2014 for Best Enterprise in Bangladesh, Asia Best Employer Brand Awards in 2015, Six times 1st Prize for Highest VAT Payer at DITF-2015, 2014, 2013, 2012, 2011 & 2010 respectively, Second Prize for Premier Pavilion Category at DITF-2015, Best Refrigerator Brand Award-2014, Best Television Brand Award-2014, Best Local Brand Award-2014, 1st Prize for Premier Pavilion Category at DITF-2014, The Global Brand excellence Award in 2014 for brand excellence in consumer electronics, 1st Prize for Premier Pavilion Category at DITF-2013, Best Sponsor Award-2012, Creative Media Ltd. BABISAS Award-2012, Best Brand (Refrigerator) Award-2011, 2nd Prize for Premier Pavilion Category at DITF-2011, 2nd Prize for Premier Pavilion Category at DITF-2010, 1st Prize for Premier Pavilion Category at DITF-2009, 1st Prize for Premier Pavilion Category at CITF-2005.
+                    When world-class engineers meet world-class manufacturing technologies, you can be sure that you get nothing less than world-class quality and safety with each electric scooter that rolls out. From beginning to end, no compromises are made when it comes to ensuring quality and environmental safety. Stringent durability and reliability tests, at far more extreme conditions than real-life situations are carried out. Because when you ride an Okinawa scooter, you should settle for nothing less than the best in comfort, style, affordability, and eco-friendliness.
                 </div>
-            </div> */}
+            </div>
 
-            {/* <div className="part  sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
-                <div className="heading font-bold mb-1">Our Vision</div>
+            <div className="hp_company mt-10">
+                <img src={compnay_two} alt="hp" className='sm:w-3/6 md:w-2/6 mx-auto' width={240} />
+            </div>
+
+            <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
+                <div className="heading font-bold mb-1">Technology By Okinawa</div>
                 <hr />
-                <div className="data text-sm mt-2">Along the way, Walton has earned domestic and global recognition for its experience and proven track record in a variety of electronics fields. Walton is the pioneer of developing state of the art designs and modern technology having leading market share specializing in Multi-Stored Refrigerators, Freezers, Air Conditioners, LED/ LCD televisions, Motorcycles, Smart Phones and Home Appliances.Walton is working on carrying the flag of red and green into the global market presence from the present 40 countries to more than 200 countries to dominate Go Global and the top five Electronics Brand of the Globe within 2030.</div>
-                <br />
-                <br />
-            </div> */}
+                <div className="data text-sm mt-2">
+                    Creating Innovation in the field of EV Technology
+                    IPR (Intellectual Property Rights)
+
+                    Micro processor controller for electric two wheeler
+                    Permanent magnet BLDC motor for electric two wheeler
+                    NMC Lithium Ion Battery with battery management system
+                    India is on the fast track of growth. And the modern Indian needs a machine that can match the pace and make every ride comfortable and enjoyable while enabling him to do his bit for the environment. So, each day at Okinawa is spent innovating ways to build machines that leave a mark. Because a quality innovation is one that increases the joy, decreases the effort, and minimizes the emission.
+                </div>
+            </div>
+
+
+            <div className="part sm:w-4/5 lg:w-3/4 mx-auto text-white mt-4">
+                <div className="heading font-bold mb-1">Tacita</div>
+                <hr />
+                <div className="data text-sm mt-2">
+                    Okinawa has entered into a joint venture with TACITA, an Italian manufacturer of electric and performance motorcycles. The new company, born from the joint venture, will be based in India and will begin production from 2023. The goal for both companies is to offer extremely reliable, pleasant and usable products for maximum customer satisfaction.
+                    Tacita® is an Italian company founded in 2009, to design and manufacture high-performance electric motorcycles that are innovative and unique in its characteristics. Motorcycles that respect the environment and the people around them. With its  goal  to build the perfect electric motorcycle, which  gives tough competition to the  traditional motorcycles, by providing  sensations of pure riding, with the advantage of being driven by a completely “zero emission” electric motor.  Tacita’s® commitment is focused on research, engineering and design, to create Italian bikes with  unique temperament.
+                    We being the market leader in the Electric – 2 – Wheeler segment ,will provide the local development of the future product & the production in our second state- of -the art manufacturing facility in Rajasthan ,owing to our years of experience in manufacturing & selling of electric- 2 -wheelers in India . Tacita will provide the powertrain – controller, motor, battery packs and BMS . This JV will introduce two product lines : scooters and motorcycles – for domestic and international markets .
+                </div>
+            </div>
+
 
         </div>
     )
