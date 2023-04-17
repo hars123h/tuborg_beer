@@ -33,7 +33,6 @@ import invite_bg from '../images/invite_bg.png';
 import windharvester_logo from '../images/windharvester_logo.png';
 import rent from '../images/rent.png';
 import financial from '../images/financial.png';
-import user from '../images/user.png';
 import make_money from '../images/make_money.png';
 import dividend from '../images/dividend.png';
 import wind1 from '../images/wind1.jpg';
@@ -72,6 +71,15 @@ import p5 from '../images/okinawascoters/p5.png';
 import p6 from '../images/okinawascoters/p6.png';
 import p7 from '../images/okinawascoters/p7.png';
 import p8 from '../images/okinawascoters/p8.png';
+
+import w1 from '../images/okinawascoters/w1.png';
+import i1 from '../images/okinawascoters/i1.png';
+import w2 from '../images/okinawascoters/w2.png';
+import h1 from '../images/okinawascoters/h1.png';
+import home from '../images/okinawascoters/home.png';
+import download from '../images/okinawascoters/download.png';
+import user from '../images/okinawascoters/user.png';
+import mine from '../images/okinawascoters/mine.png';
 
 
 const customStyles = {
@@ -115,7 +123,9 @@ const Home = () => {
     const [quantity, setQuantity] = React.useState(1);
     const [currPlan, setCurrPlan] = React.useState(null);
     const [currentVisible, setCurrentVisible] = React.useState('big');
-    const [userDetails, setUserDetails] = React.useState(null);
+    const [userDetails, setUserDetails] = React.useState({
+        balance: 0, recharge_amount: 0, earning: 0
+    });
     const amountDetails = useContext(AmountContext);
     const [toasterShow, setToasterShow] = useState(false);
     const [welcomeShow, setWelcomeShow] = useState(false);
@@ -169,7 +179,7 @@ const Home = () => {
     }, []);
 
     useLayoutEffect(() => {
-        document.body.style.backgroundColor = "#eaf4eb";
+        document.body.style.backgroundColor = "#7c925e";
         getUserDetails();
     }, []);
 
@@ -240,7 +250,7 @@ const Home = () => {
     }
 
     return (
-        <div className='relative bg-[#eaf4eb] px-1'>
+        <div className='relative bg-red-800 px-1'>
             {toasterShow ? <div className='w-[90%] absolute z-50 top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 text-center bg-black opacity-80 text-white px-4 py-1 rounded-md'>
                     <div>{toasterText}</div>
@@ -313,14 +323,15 @@ const Home = () => {
                         <div className='flex  flex-col bg-white w-full text-white rounded-md'>
                             <div className='bg-red-800 text-center p-1 text-lg shadow-md text-white'>Notice</div>
                             <div className='flex flex-col p-2 text-white text-md gap-2 font-bold bg-red-800 pt-4'>
-                                <div>Welcome to Okinawascoters investment Platform</div>
-                                <div>Let Okinawascoters create unlimited wealth with you.</div>
-                                <div>The Okinawascoters APP is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 450 &#8377; Earn 110 &#8377; Daily</div>
-                                <div>Invest 1100 &#8377; Earn 320 &#8377; Daily</div>
-                                <div>Invest 1850 &#8377; Earn 510 &#8377; Daily</div>
-                                <div>Invest 5100 &#8377; Earn 1540 &#8377; Daily</div>
-                                <div>Invest 15200 &#8377; Earn 4660 &#8377; Daily</div>
+                                <div>
+                                    <div>  आरआरआई में आपका स्वागत है</div>
+                                    <div>RRI ऐप भारत में भरोसेमंद लॉन्ग-टर्म इनकम ऐप है</div>
+                                    <div>100RS भेजने के लिए रजिस्टर करें</div>
+                                    <div>दैनिक आय दैनिक निकासी</div>
+                                    <div>आरआरआई एपीपी में पैसा बनाने के कई तरीके हैं, पैसा बनाने के लिए निवेश करना, सदस्यों को पैसा बनाने के लिए आमंत्रित करना और रेफरल कमीशन 30% जितना अधिक है। टीम की संख्या एक निश्चित संख्या तक पहुँचने के बाद, ग्राहक सेवा से संपर्क करें और दैनिक वेतन का 5% प्राप्त करें</div>
+                                    <div>अपने अनन्य लिंक को कॉपी करें, इसे अपने सामाजिक मंडली और सामाजिक मंच पर साझा करें, और आपको स्रोत से समृद्ध आय प्राप्त होगी। दीर्घकालिक प्रभावी, दीर्घकालिक लाभ</div>
+                                    <div>अभी कार्य करें और अपने आप को अमीर बनाएं</div>
+                                </div>
                             </div>
 
                             <div className='border-t border-gray-600 my-1'></div>
@@ -354,46 +365,67 @@ const Home = () => {
             </div> */}
 
             {/*Navigation bar */}
-            <div className="bg-red-800 rounded-lg text-white relative flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
-                <div className="flex flex-row justify-around items-center w-full py-2">
 
-                    <a href="https://telegram.me/chevronoil55" className=' no-underline text-white cursor-pointer'>
+            <div className="bg-red-800  text-[#2a0118] relative flex justify-around overflow-x-hidden  mx-auto px-[2px]  mt-2  sm:w-3/5 lg:w-3/5 overflow-y-hidden">
+                <div className="flex flex-col items-center gap-2 border-l border-gray-300 pl-2">
+                    <div className='text-[14px]'>Assets</div>
+                    <div className='font-bold text-[25px]'>{Math.round(userDetails.balance)}</div>
+                </div>
+
+                <div className="flex flex-col items-center gap-2">
+                    <div className='text-[14px]'>Recharge</div>
+                    <div className='font-bold text-[25px]'>{Math.round(userDetails.recharge_amount)}</div>
+                </div>
+
+                <div className="flex flex-col items-center gap-2 border-r pr-2 border-gray-300">
+                    <div className='text-[14px]'>Income</div>
+                    <div className='font-bold text-[25px]'>{Math.round(userDetails.earning)}</div>
+                </div>
+            </div>
+
+            <div className="  text-[#3b240b] relative flex overflow-x-hidden  mx-auto mt-2 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
+                <div className="bg-white flex flex-row justify-around items-center w-full py-2 mx-2">
+
+                    <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                        <img src={w1} alt="recharge" className='w-10' onClick={() => navigate('/recharge')} />
+                        <div className='text-[12px] font-[700]'>Recharge</div>
+                    </div>
+
+                    <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                        <img src={i1} alt="invite" className='w-10 mr-2' onClick={() => navigate('/invite')} />
+                        <div className='text-[12px] font-[700]'>Invite</div>
+                    </div>
+
+                    <a href="https://telegram.me/chevronoil55" className=' no-underline  cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={asset0} alt="online" className='w-10' />
-                            <div>Online</div>
+                            <img src={h1} alt="recharge" className='w-10' />
+                            <div className='text-[12px] font-[700]'>Online</div>
                         </div>
                     </a>
 
-                    <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={asset1} alt="recharge" className='w-10' />
-                        <div>App</div>
-                    </div>
-
-                    <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={asset2} alt="recharge" className='w-10' onClick={() => navigate('/recharge')} />
-                        <div>Recharge</div>
-                    </div>
-
-                    <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={asset3} alt="invite" className='w-10' onClick={() => navigate('/invite')} />
-                        <div>Invite</div>
+                    <div onClick={() => isBetween() || true ?
+                        navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } }) : toaster('You are not in the withdrawl time window')
+                    }
+                        className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                        <img src={w2} alt="online" className='w-10' />
+                        <div className='text-[12px] font-[700]'>Withdrawl</div>
                     </div>
 
                 </div>
             </div>
 
-            <div className='bg-red-800 text-md text-white flex mt-1 items-center shadow-lg  mb-2 sm:w-3/5 lg:w-3/5 mx-auto'>
+            {/* <div className='bg-red-800 text-md text-white flex mt-1 items-center shadow-lg  mb-2 sm:w-3/5 lg:w-3/5 mx-auto'>
                 <div className={`w-1/2 text-center bg-white  py-4 ${currentVisible === 'big' ? ' bg-red-800' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('big')}>Normal Okinawascoters</div>
                 <div className={`w-1/2 text-center bg-white py-4 ${currentVisible === 'short' ? ' bg-red-800 ' : 'text-red-800 font-bold'}`} onClick={() => setCurrentVisible('short')}>VIP Okinawascoters</div>
-            </div>
+            </div> */}
 
             {/*Plans Cards*/}
-            <div className={`card_grid grid grid-cols-1 sm:w-3/5 lg:w-3/5 w-[97%] mx-auto mt-2 ${currentVisible === 'big' ? 'mb-20' : ''}`}>
+            <div className={`card_grid grid grid-cols-1 sm:w-3/5 lg:w-3/5 w-[97%] mx-auto mt-2 ${currentVisible === 'big' ? 'mb-1' : ''}`}>
 
-                {currentVisible === 'big' && (
+                {(currentVisible === 'big' || true) && (
                     <div className='grid grid-cols-1'>
                         {userDetails && amountDetails?.plan_state && (
-                            <div className='grid grid-cols-1 gap-4'>
+                            <div className='grid grid-cols-2 gap-1'>
                                 {userDetails && (amountDetails.plan_state[0] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Okinawascoters 1"} plan_cycle={365} plan_daily_earning={135} plan_amount={610} plan_type={'Big Plan'} />
@@ -491,8 +523,8 @@ const Home = () => {
             {/*short plans */}
             <div className={`card_grid grid grid-cols-1 sm:w-3/5 lg:w-3/5 w-[97%] mx-auto mt-2 ${currentVisible === 'short' ? 'mb-20' : ''}`}>
 
-                {currentVisible === 'short' && amountDetails?.plan_state && userDetails && (
-                    <div className={`grid grid-cols-1 gap-4`}>
+                {(currentVisible === 'short' || true) && amountDetails?.plan_state && userDetails && (
+                    <div className={`grid grid-cols-2 gap-1`}>
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[6] === 0) ?
                             (
                                 <span className='pointer-events-none'>
@@ -574,50 +606,52 @@ const Home = () => {
 
             {/*Navigation Bar 2 bg-[#1cb5b2]*/}
             {welcomeShow ? (
-                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-red-800 flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-                    <div className="flex flex-row justify-around items-center w-full py-2 text-sm font-normal">
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={asset4} alt="online" className='w-8' />
+                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none  flex overflow-x-hidden text-[#7c925e]  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
+                    <div className="flex flex-row justify-around items-center w-full py-[2px] font-normal  text-[12px]">
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'
+                        >
+                            <img src={home} alt="online" className='w-[30px] h-[30px]' />
                             <div>Home</div>
                         </div>
 
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={asset5} alt="recharge" className='w-8' />
-                            <div>Team</div>
+                            <img src={download} alt="recharge" className='w-[30px] h-[30px]' />
+                            <div>Download</div>
                         </div>
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center '>
-                            <img src={asset6} alt="app_dwd" className='w-8' />
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' >
+                            <img src={user} alt="app_dwd" className='w-[30px] h-[30px]' />
                             <div>Team</div>
                         </div>
 
 
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={asset7} alt="invite" className='w-8' />
-                            <div>Mine</div>
+                        <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center' >
+                            <img src={mine} alt="invite" className='w-[30px] h-[30px]' />
+                            <div>My</div>
                         </div>
                     </div>
                 </div>
             ) : (
-                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none text-gray-700  flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
-                    <div className="flex flex-row justify-around font-normal text-sm items-center w-full py-2">
-                        <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={asset4} alt="online" className='w-8' />
+                <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none  flex overflow-x-hidden text-[#7c925e]  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
+                    <div className="flex flex-row justify-around items-center w-full py-[2px] font-normal  text-[12px]">
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'
+                            onClick={() => navigate('/home')}>
+                            <img src={home} alt="online" className='w-[30px] h-[30px]' />
                             <div>Home</div>
                         </div>
 
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/company')}>
-                            <img src={asset5} alt="recharge" className='w-8' />
-                            <div>Company</div>
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                            <img src={download} alt="recharge" className='w-[30px] h-[30px]' />
+                            <div>Download</div>
                         </div>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
-                            <img src={asset6} alt="app_dwd" className='w-8' />
+                            <img src={user} alt="app_dwd" className='w-[30px] h-[30px]' />
                             <div>Team</div>
                         </div>
 
 
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
-                            <img src={asset7} alt="invite" className='w-8' />
-                            <div>Mine</div>
+                        <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
+                            <img src={mine} alt="invite" className='w-[30px] h-[30px]' />
+                            <div>My</div>
                         </div>
                     </div>
                 </div>

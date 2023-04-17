@@ -10,7 +10,7 @@ module.exports = {
       },
       colors: {
         'regal-blue': '#243c5a',
-        'red-800':'#bf00fe'
+        'red-800':'#7c925e'
       },
       animation: {
         marquee: 'marquee 8s linear infinite',

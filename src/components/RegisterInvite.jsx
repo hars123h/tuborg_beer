@@ -15,7 +15,7 @@ import amaz_logi from '../images/amaz_logi.png';
 import { PhoneAndroid, VerifiedUserOutlined, LockOutlined } from '@material-ui/icons';
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
-import clogo from '../images/okinawascoters/ologo.jpg';
+import clogo from '../images/okinawascoters/nlogo.png';
 
 
 
@@ -144,7 +144,7 @@ const Register = () => {
             <div className='outline-none flex items-center justify-between mb-2  rounded-full border border-gray-200'>
                 <div className='w-full cstm_b rounded-full px-2'>
                     <input value={mobno} onChange={e => setMobno(e.target.value)} type="text"
-                        className=' p-[7px] w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-[14px]' placeholder='Please enter a valid phone number' name="phoneno" id="phoneno" />
+                        className=' p-[7px] w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-[14px]' placeholder='Phone Number' name="phoneno" id="phoneno" />
                 </div>
             </div>
             {/* <div className='flex border-b-2 border-gray-300 rounded-full mb-2 px-2 bg-white'>
@@ -175,7 +175,7 @@ const Register = () => {
             </div>
 
 
-            <button onClick={handleRegister} className='bg-red-800 text-white text-center py-[5px]  rounded-full text-lg'>Register</button>
+            <button onClick={handleRegister} className='bg-red-800 text-black text-center py-[5px]  rounded-full text-[20px]'>Register</button>
             <div onClick={() => navigate('/login')} className='cursor-pointer text-center text-red-800  p-[7px] mb-2 bg-white  rounded-full border border-gray-200'>
                 Already have an account, log in
             </div>

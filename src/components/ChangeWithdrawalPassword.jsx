@@ -48,12 +48,12 @@ const ChangeWithdrawalPassword = () => {
 
     //console.log(loc);
     return (
-        <div className='bg-red-800 h-screen sm:h-[700px] md:h-[950px] relative'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <div className='bg-white h-screen sm:h-[700px] md:h-[950px] relative'>
+            {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
+            </div> : null}
             <div className="options text-center flex bg-red-800 shadow-lg font-medium items-center p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/settings', { state: { withdrawalPassword: loc.state.withdrawalPassword, loginPassword: loc.state.loginPassword } })} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                     className="w-4 h-4   storke-white  cursor-pointer stroke-white">
@@ -62,29 +62,31 @@ const ChangeWithdrawalPassword = () => {
                 <div className='text-white text-sm flex-grow'>Fund Management Password</div>
             </div>
 
-{/* [#61b2ff] */}
-            <div className="box flex flex-col gap-4 mx-2 bg-blue-400 mt-4">
+            <div className='flex gap-2 items-center  text-md  font-normal p-1 text-sm text-gray-600 bg-[#f9f9f9] m-1 shadow-sm shadow-gray-50  '>
+                Please enter the New Password
+            </div>
 
-                <div className='flex gap-2 items-center  text-md  font-semibold p-1 text-black m-1 shadow-sm shadow-gray-50  '>
-                    Please enter the New Password
+            {/* [#61b2ff] */}
+            <div className="box flex flex-col gap-2 mx-4 bg-white mt-4">
+
+
+
+                <div className='flex gap-2 items-center bg-[#f9f9f9] text-sm p-3 m-1  '>
+                    <input onChange={(e) => setOldpwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='Old Withdrawal Password' />
                 </div>
 
-                <div className='flex gap-2 items-center  text-lg p-3 m-1  '>
-                    <input onChange={(e)=>setOldpwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='Old Withdrawal Password' />
+                <div className='flex gap-2 items-center bg-[#f9f9f9] text-sm p-3 m-1  '>
+                    <input onChange={(e) => setNew_pwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='New Withdrawal Password' />
                 </div>
 
-                <div className='flex gap-2 items-center text-lg p-3 m-1  '>
-                    <input onChange={(e)=>setNew_pwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='New Withdrawal Password' />
-                </div>
-
-                <div className='flex gap-2 items-center text-lg p-3 m-1 '>
-                    <input onChange={(e)=>setCnf_new_pwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='Confirm New Withdrawal Pasword' />
+                <div className='flex gap-2 items-center bg-[#f9f9f9] text-sm p-3 m-1 '>
+                    <input onChange={(e) => setCnf_new_pwd(e.target.value)} type="text" className='outline-none w-full bg-inherit placeholder-[#757575]' placeholder='Confirm New Withdrawal Pasword' />
                 </div>
             </div>
 
-            <div className='mx-2'>
+            <div className='mx-4'>
                 {/* [#7899de] */}
-                <button onClick={handleReset} className='bg-red-800 text-white text-lg mt-5 mb-20 rounded-lg shadow-lg block w-full py-2 shadow-sky-100'>Confirm</button>
+                <button onClick={handleReset} className='bg-red-800 text-white text-lg mt-5 mb-20 rounded-sm shadow-lg block w-full py-2 shadow-slate-100'>Confirm</button>
             </div>
         </div>
     )

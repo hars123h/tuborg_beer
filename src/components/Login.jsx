@@ -17,7 +17,7 @@ import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
 import asset0 from '../images/assets5/asset 0.png';
 import asset1 from '../images/assets5/asset 1.png';
-import clogo from '../images/okinawascoters/ologo.jpg';
+import clogo from '../images/okinawascoters/nlogo.png';
 
 const Login = () => {
 
@@ -116,16 +116,16 @@ const Login = () => {
                 </div>
                 {/*[#0096D5] */}
                 <div className='mt-16 flex flex-col gap-6'>
-                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-md shadow-md shadow-red-800
+                    <button onClick={handleSignIn} style={{boxShadow: "-1px 5px 15px 0 #7c925e"}} className='bg-red-800 w-full pt-2 pb-2 text-[20px] text-black rounded-full 
                     '>Login</button>
-                    {/* <button onClick={() => navigate('/register')} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
-                    '>Register</button> */}
+                    <button onClick={() => navigate('/register')} style={{boxShadow: "-1px 5px 15px 0 #7c925e"}} className='bg-red-800 w-full pt-2 pb-2 text-[20px] text-black rounded-full 
+                    '>Register</button>
                 </div>
                 {/*[#379EFE] */}
                 <div className="options flex justify-between mt-2">
                     {/* <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div> */}
-                    <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div>
-                    <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/forgot')}>Forget password?</div>
+                    {/* <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div> */}
+                    <div className='cursor-pointer text-black' onClick={() => navigate('/forgot')}>Forget password?</div>
                 </div>
 
             </div>

@@ -64,7 +64,7 @@ const Record = () => {
     }, []);
     //[#2e9afe]
     return (
-        <div className=' bg-red-800 pb-3 sm:h-[1000px] md:h-screen h-screen'>
+        <div className=' bg-white pb-3 sm:h-[1000px] md:h-screen h-screen'>
 
             <div className="options text-center text-white flex gap-2 items-center p-2  bg-red-800 text-lg pt-2 font-medium">
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Record = () => {
                 <div className='flex-grow text-center'>Record</div>
             </div>
             {/* [#bfdbf5] */}
-            <div className='flex flex-wrap items-center justify-between py-2 px-4 bg-stone-300 border-b border-white'>
+            <div className='flex flex-wrap items-center justify-between py-2 px-4 bg-white border-b border-white'>
                 <div className="relative w-24 ">
                     <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-xs rounded-full focus:ring-red-500 focus:border-red-500 block w-full  px-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
                 </div>
@@ -86,10 +86,10 @@ const Record = () => {
                     <input type="date" className="bg-white border-2 border-gray-300 text-gray-900 sm:text-xs rounded-full focus:ring-red-500 focus:border-red-500 block w-full  px-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Select date" />
                 </div>
                 {/* [#2e9afe] */}
-                <button className='bg-red-900 shadow-lg w-20 text-center  ml-3 text-white rounded-full py-1'>Search</button>
+                <button className='bg-gray-800 shadow-lg w-20 text-center  ml-3 text-white rounded-full py-1'>Search</button>
             </div>
             {/* [#bce4ed] */}
-            <div className='records w-full flex bg-sky-200 font-normal items-center'>
+            <div className='records w-full flex bg-white font-normal items-center'>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'recharges' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('recharges')}>Recharge</div>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'withdrawals' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('withdrawals')}>Withdrawls</div>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'all' ? 'border-b-2 border-red-800 text-red-800' : ''}`} onClick={() => setCurrentRecord('all')}>All Types</div>
