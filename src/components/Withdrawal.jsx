@@ -69,7 +69,7 @@ const Withdrawal = () => {
             const docRef = await axios.post(`${BASE_URL}/get_user`, {user_id: localStorage.getItem('uid')}).then(({data})=>data);
             if (docRef) {
                 if (docRef.bank_details.bankAccount.length===0) {
-                    toaster('Fill bank details first!', '/bank');
+                    toaster('Unbound bank card, go to bind!', '/bank');
                 } else {
                     setDetails(docRef.bank_details);
                     docRef.balance ? setBalance(docRef.balance) : setBalance(0);
@@ -196,7 +196,7 @@ const Withdrawal = () => {
         <div className='bg-withdraw flex flex-col  sm:h-[1000px] md:h-[950px] relative'>
             {toasterShow?<div className='absolute top-1/2 w-full left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black w-[80%] mx-auto  opacity-100 text-white px-2 py-1 rounded-md'>
-                    <div className='text-center'>{toasterText}</div>
+                    <div className='text-center w-full'>{toasterText}</div>
                 </div>
             </div>:null}
             <div>

@@ -32,7 +32,7 @@ const Recharge = () => {
                 toaster(`Amount should be greater than ₹${amountDetails.amount}`);
                 return;
             }
-            navigate(`/recharge_window/${recharge_value}`);
+            navigate(`/recharge_window_middle/${recharge_value}`);
         } else {
             alert('Enter a valid recharge amount');
         }
@@ -52,7 +52,7 @@ const Recharge = () => {
                     className="w-4 h-4   storke-white  cursor-pointer stroke-white">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-                <div className='flex-grow font-bold'>Recharge</div>
+                <div className='flex-grow font-bold text-white'>Recharge</div>
             </div>
 
             <div className="options text-center mx-3 my-3 text-white flex  bg-red-800 text-md  font-normal mb-2 py-3 items-center px-2">

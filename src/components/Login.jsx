@@ -105,14 +105,14 @@ const Login = () => {
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">
                     <div className='flex items-center border-r-2 pr-2 border-solid border-gray-300'>
                         <img src={asset0} alt="user" className='h-5 ' />
-                        <span className='text-sm mb-1'>+91</span>
+                        {/* <span className='text-sm mb-1'>+91</span> */}
                     </div>
-                    <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll' />
+                    <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll placeholder:text-gray-600' />
                 </div>
 
                 <div className=" items-center p-2 passowrd flex  bg-[#f1f1f1] rounded-md ">
                     <img src={asset1} alt="user" className='h-5 border-r-2 pr-2 border-solid border-gray-300' />
-                    <input value={pwd} onChange={(e) => setpwd(e.target.value)} type="password" placeholder='Login password' name="password" id="pwrd" className='pl-1 bg-[#f1f1f1] outline-none overflow-x-scroll' />
+                    <input value={pwd} onChange={(e) => setpwd(e.target.value)} type="password" placeholder='Login password' name="password" id="pwrd" className='pl-1 bg-[#f1f1f1] outline-none overflow-x-scroll placeholder:text-gray-600' />
                 </div>
                 {/*[#0096D5] */}
                 <div className='mt-16 flex flex-col gap-6'>
@@ -125,7 +125,7 @@ const Login = () => {
                 <div className="options flex justify-between mt-2">
                     {/* <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div> */}
                     {/* <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div> */}
-                    <div className='cursor-pointer text-black' onClick={() => navigate('/forgot')}>Forget password?</div>
+                    {/* <div className='cursor-pointer text-black' onClick={() => navigate('/forgot')}>Forget password?</div> */}
                 </div>
 
             </div>

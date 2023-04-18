@@ -139,7 +139,7 @@ const Mine = () => {
           setAccumulated_income(ai);
           setToday_income(ti);
 
-        
+
           await axios.post(`${BASE_URL}/update_earning`, {
             earn: earn,
             temp: temp,
@@ -149,7 +149,7 @@ const Mine = () => {
             .catch(error => console.log('Some error Occured'));
         }
 
-        await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({data})=>{
+        await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
           setEarning(data.earning);
           //console.log(data);
         });
@@ -222,14 +222,90 @@ const Mine = () => {
   if (loading) {
     return (
       <div className='flex flex-col justify-center items-center  h-screen bg-gray-50 z-10 opacity-90'>
-        <RotatingLines
-          strokeColor="grey"
-          strokeWidth="2"
-          animationDuration="0.75"
-          width="40"
-          visible={true}
-        />
-        <div>Loading...</div>
+        <div className='relative h-screen bg-white'>
+          <div className="flex flex-col bg-white gap-3">
+            <div className='flex  justify-start items-center gap-1 p-3 mt-4'>
+              <img src={alogo} alt="wind_login" width={90} className="bg-white py-2 px-3" />
+              <div className='text-2xl'>{""} <span className='border border-red-700 px-1 text-red-700 rounded-xl text-xs'>LV0</span></div>
+            </div>
+            <div className='flex flex-row w-full justify-around text-black items-center h-28 rounded-lg bg-red-800'>
+
+              <div className="flex flex-col justify-center items-center gap-1 h-full">
+                <div>Assets</div>
+                <div className='text-xs'>{0.00}</div>
+              </div>
+
+              <div className="flex flex-col justify-center items-center gap-1  h-full">
+                <div>Recharge</div>
+                <div className='text-xs'>{0.00}</div>
+              </div>
+
+              <div className="flex flex-col  h-full justify-center items-center gap-1">
+                <div>Income</div>
+                <div className='text-xs'>{0.00}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 px-2 gap-2 font-medium text-sm">
+
+            <div className="flex flex-col items-center bg-[#f3f3f3] py-1" >
+              <div className='w-[30%]'><img src={m3} alt="setting" /></div>
+              <div className='flex-grow text-lg font-semibold'>Plan Details</div>
+
+            </div>
+
+            <div className="flex flex-col items-center bg-[#f3f3f3] py-1" >
+              <div className='w-[30%]'><img src={m3} alt="setting" /></div>
+
+              <div className='flex-grow text-lg font-semibold'>Account record</div>
+
+            </div>
+
+            <div className="flex flex-col items-center bg-[#f3f3f3] py-1" >
+              <div className='w-[30%]'><img src={m4} alt="setting" /></div>
+              <div className='flex-grow text-sm font-semibold'>Personal Information</div>
+
+            </div>
+
+            <div className="flex flex-col items-center bg-[#f3f3f3] py-1" >
+              <div className='w-[30%]'><img src={m1} alt="setting" /></div>
+              <div className='flex-grow text-lg font-semibold'>Company</div>
+            </div>
+
+          </div>
+
+
+          <div onClick={() => setLogout_popup(true)} className="flex flex-row justify-center text-xl
+        w-[80%] mx-auto py-1 mt-14 text-center rounded-md bg-red-800 text-black">
+            <div>Sign out</div>
+          </div>
+
+          <div className="fixed bottom-0 z-10 bg-gray-50 rounded-none  flex overflow-x-hidden text-[#7c925e]  mx-auto mt-2 border-2 border-gray-100 w-full overflow-y-hidden">
+            <div className="flex flex-row justify-around items-center w-full py-[2px] font-normal  text-[12px]">
+              <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'
+                onClick={() => navigate('/home')}>
+                <img src={home} alt="online" className='w-[30px] h-[30px]' />
+                <div>Home</div>
+              </div>
+
+              <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
+                <img src={download} alt="recharge" className='w-[30px] h-[30px]' />
+                <div>Download</div>
+              </div>
+              <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
+                <img src={user} alt="app_dwd" className='w-[30px] h-[30px]' />
+                <div>Team</div>
+              </div>
+
+
+              <div className='text-red-800 cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
+                <img src={mine} alt="invite" className='w-[30px] h-[30px]' />
+                <div>My</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

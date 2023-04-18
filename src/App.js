@@ -39,6 +39,7 @@ import axios from 'axios';
 import BASE_URL from './api_url';
 import ShorPlans from './components/ShortPlans';
 import Rewards from './components/Rewards';
+import RechargeMiddle from './components/RechargeMiddle';
 
 
 export const AmountContext = createContext();
@@ -88,6 +89,7 @@ function App() {
           <Route path="/user_feedback" element={<ClientFeedback />} />
           <Route path="/change_login_password" element={< ChangeLoginPassword />} />
           <Route path="/change_withdrawal_password" element={< ChangeWithdrawalPassword />} />
+          <Route path="/recharge_window_middle/:recharge_value" element={<RechargeMiddle />} />
           <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} />
           <Route path="/recharge_approval" element={<Approval />} />
           <Route path="/withdrawal_approval" element={<WithdrawalApproval />} />
