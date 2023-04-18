@@ -89,7 +89,7 @@ const Record = () => {
                 <button className='bg-gray-800 shadow-lg w-20 text-center  ml-3 text-white rounded-full py-1'>Search</button>
             </div>
             {/* [#bce4ed] */}
-            <div className='records w-full flex bg-white font-normal items-center'>
+            <div className='records w-full flex bg-white font-normal items-center border-b-2 border-gray-400'>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'all' ? 'border-b-2 border-red-900 text-red-700' : ''}`} onClick={() => setCurrentRecord('all')}>All Types</div>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'withdrawals' ? 'border-b-2 border-red-900 text-red-700' : ''}`} onClick={() => setCurrentRecord('withdrawals')}>Withdrawls</div>
                 <div className={`h-[40px] cursor-pointer flex items-center justify-center w-1/3 text-center ${currentRecord === 'recharges' ? 'border-b-2 border-red-900 text-red-700' : ''}`} onClick={() => setCurrentRecord('recharges')}>Recharge</div>

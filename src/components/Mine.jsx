@@ -221,7 +221,7 @@ const Mine = () => {
 
   if (loading) {
     return (
-      <div className='flex flex-col justify-center items-center  h-screen bg-gray-50 z-10 opacity-90'>
+      <div className='flex flex-col justify-center items-center bg-gray-50 z-10 opacity-90'>
         <div className='relative h-screen bg-white'>
           <div className="flex flex-col bg-white gap-3">
             <div className='flex  justify-start items-center gap-1 p-3 mt-4'>
@@ -311,7 +311,7 @@ const Mine = () => {
   }
 
   return (
-    <div className='relative h-screen bg-white'>
+    <div className='relative  bg-white'>
       {toasterShow ?
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
           <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
@@ -502,10 +502,11 @@ const Mine = () => {
             <div>Home</div>
           </div>
 
-          <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-            <img src={download} alt="recharge" className='w-[30px] h-[30px]' />
-            <div>Download</div>
+          <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={()=>navigate('/company')}>
+            <img src={m1} alt="recharge" className='w-[30px] h-[30px]' />
+            <div>Company</div>
           </div>
+
           <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
             <img src={user} alt="app_dwd" className='w-[30px] h-[30px]' />
             <div>Team</div>

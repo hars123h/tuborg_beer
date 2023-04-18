@@ -6,11 +6,11 @@ import React from 'react';
 //[#0096D5] [#00bcd4]
 
 
-const Card = ({product_type, product_image, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle, handleClick}) => {
+const Card = ({pre_sale, long_plan_state, product_type, product_image, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle, handleClick}) => {
   
  
   return (
-    <div className='mx-[2px] shadow-2xl  bg-[#fafff9]  shadow-gray-800 border border-gray-100'  onClick={()=>handleClick(product_type ,plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
+    <div className='mx-[2px] shadow-2xl  bg-[#fafff9]  shadow-gray-800 border border-gray-100'>
         {/* <div className="title text-[#464945] font-bold text-lg">{plan_name}</div>         */}
         <div className="info text-xs flex flex-col items-center">
             <img src={product_image} alt="comp_img" className='shadow-xl h-40 w-full mb-1' />
@@ -41,10 +41,39 @@ const Card = ({product_type, product_image, plan_name, plan_type, plan_amount, p
 
             
         </div>
-        <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+
+        {pre_sale === true ? (
+        <div className="cursor-pointer btn text-black font-semibold text-center  py-2  px-2 mt-5 text-md mb-2 shadow-md  w-[55%] mx-auto bg-pre_sale">
+          Pre-Sale
+        </div>
+      ) : null}
+
+      {/* {console.log(pre_sale, product_type, long_plan_state)} */}
+
+      {
+        pre_sale === false ? (
+          product_type === 'long' ? (
+            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+              onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
+              Buy Now
+            </div>
+          ) : (long_plan_state === true) && false ? (
+            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]">
+              Buy Now
+            </div>
+          ) : (
+            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+              onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
+              Buy Now
+            </div>
+          )
+        ) : null
+      }
+
+        {/* <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
             onClick={()=>handleClick(product_type ,plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
             Buy Now
-        </div>
+        </div> */}
     </div>
   )
 }

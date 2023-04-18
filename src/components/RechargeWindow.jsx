@@ -95,7 +95,7 @@ const RechargeWindow = () => {
             </div>
 
             <div className='flex flex-col items-center gap-1 mt-4'>
-                <CopyToClipboard text={`${recharge_value}`} onCopy={() => toaster('Copied to clipboard')}>
+                <CopyToClipboard text={`${recharge_value}`} onCopy={() => toaster('UPI copied successfully')}>
                     <div className='mb-1 text-xs text-gray-600 font-semibold'>click the amount to copy</div>
                 </CopyToClipboard>
                 <div className='text-6xl font-bold'>&#8377; {recharge_value}.00</div>

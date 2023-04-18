@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useContext, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AmountContext } from '../App';
-import amazon from '../images/okinawascoters/amazon.webp';
+import amazon from '../images/okinawascoters/prlogo.png';
 
 
 const Recharge = () => {
@@ -30,7 +30,7 @@ const Recharge = () => {
     
     //[#2e9afe] #4daaff #298ae4 [#2e9afe]
     return (
-        <div className='bg-recharge-bg h-screen relative'>
+        <div className='bg-recharge-bg relative'>
             {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-100 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
@@ -53,11 +53,11 @@ const Recharge = () => {
                     <div onClick={()=>navigate(`/recharge_window/${recharge_value}`)} className="flex flex-row items-center justify-between">
                         <div className="flex flex-row items-center gap-2">
                             <div>
-                                <img src={amazon} className="w-[50px] h-[50px]" />
+                                <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Amazon UPI-1 <span className='text-white font-semibold py-[2px] px-[3px] bg-red-500 rounded-md ml-1 text-[12px]'>HOT</span></div>
-                                <div className='text-xs text-gray-500'>Amazon UPI-1</div>
+                                <div>Dream11 UPI-1 <span className='text-white font-semibold py-[2px] px-[3px] bg-red-500 rounded-md ml-1 text-[12px]'>HOT</span></div>
+                                <div className='text-xs text-gray-500'>Dream11 UPI-1</div>
                             </div>
                         </div>
                         <div className=''>
@@ -72,11 +72,11 @@ const Recharge = () => {
                     <div onClick={()=>navigate(`/recharge_window/${recharge_value}`)} className="flex flex-row items-center justify-between">
                         <div className="flex flex-row items-center gap-2">
                             <div>
-                                <img src={amazon} className="w-[50px] h-[50px]" />
+                                <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Amazon UPI-2 </div>
-                                <div className='text-xs text-gray-500'>Amazon UPI-2</div>
+                                <div>Dream11 UPI-2 </div>
+                                <div className='text-xs text-gray-500'>Dream11 UPI-2</div>
                             </div>
                         </div>
                         <div className=''>
@@ -91,11 +91,11 @@ const Recharge = () => {
                     <div onClick={()=>navigate(`/recharge_window/${recharge_value}`)} className="flex flex-row items-center gap-1 justify-between">
                         <div className="flex flex-row items-center gap-2">
                             <div>
-                                <img src={amazon} className="w-[50px] h-[50px]" />
+                                <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Amazon UPI-3</div>
-                                <div className='text-xs text-gray-500'>Amazon UPI-3</div>
+                                <div>Dream11 UPI-3</div>
+                                <div className='text-xs text-gray-500'>Dream11 UPI-3</div>
                             </div>
                         </div>
                         <div className=''>

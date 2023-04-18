@@ -60,33 +60,37 @@ const Invite = () => {
                 </div>
             </div> : null}
             <div className="top p-3 cursor-pointer flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-            <span className='ml-1'>back</span>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate(-1)} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className="w-7 h-7 stroke-red-900  storke-white  cursor-pointer">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </div>
+                <div className='flex-grow text-center'>
+                    <span className='ml-1 text-lg font-bold text-red-900'>Invite</span>
+                </div>
             </div>
 
-            <div className="info  sm:text-xs md:text-md flex flex-col gap-2 rounded-lg bg-white text-red-800 font-bold mt-5">
-                <div className='text-left pb-3 pt-1 pl-2 text-lg text-black bg-red-800'>Agent Rewards</div>
-                <span className='ml-1 text-sm'>Level 1 = <span className='text-red-900'>{amountDetails.level1_percent}%</span></span>
-                <span className='ml-1 text-sm'>Level 2 = <span className='text-red-900'>{amountDetails.level2_percent}%</span></span>
-                <span className='ml-1 text-sm'>Level 3 = <span className='text-red-900'>{amountDetails.level3_percent}%</span></span>
+            <div className="info  sm:text-xs md:text-md flex flex-col text-black rounded-lg bg-white font-semibold mt-5">
+                <div className='text-left pb-3 mb-5 pt-1 pl-2 text-lg text-red-900 bg-red-800'>Agent Rewards:</div>
+                <span className='ml-3 text-sm'>Level 1 = <span className='text-red-700'>{amountDetails.level1_percent}%</span></span>
+                <span className='ml-3 text-sm'>Level 2 = <span className='text-red-700'>{amountDetails.level2_percent}%</span></span>
+                <span className='ml-3 mb-1 text-sm'>Level 3 = <span className='text-red-700'>{amountDetails.level3_percent}%</span></span>
             </div>
             <div className="flex gap-2">
 
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col  rounded-lg bg-white text-red-800 font-bold mt-5">
                     <div className='font-bold text-black'>Invitation Link:</div>
-                    <div className='p-3 text-black rounded-md border overflow-hidden border-red-800'>{`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`}</div>
-                    <CopyToClipboard  text={`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
-                        <span className='w-[100px] bg-red-800 text-black p-2'>Copy Link</span>
+                    <div className='p-1 text-black rounded-md border overflow-hidden border-red-800'>{`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`}</div>
+                    <CopyToClipboard text={`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
+                        <span className='w-[80px] bg-red-800 text-red-900 font-bold text-center p-2'>Copy</span>
                     </CopyToClipboard>
                 </div>
 
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col  rounded-lg bg-white text-red-800 font-bold mt-5">
                     <div className='font-bold text-black'>Invitation code:</div>
-                    <div className='p-3 text-black rounded-md border border-red-800'>{userDetails.user_invite}</div>
+                    <div className='p-1 text-black rounded-md border border-red-800'>{userDetails.user_invite}</div>
                     <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('Copied to clipboard')}>
-                        <span className='w-[100px] bg-red-800 text-black p-2'>Copy code</span>
+                        <span className='w-[80px] bg-red-800 text-red-900 font-bold text-center p-2'>Copy</span>
                     </CopyToClipboard>
                 </div>
             </div>
@@ -94,12 +98,12 @@ const Invite = () => {
 
             <div className="qr mx-auto flex flex-col justify-center items-center mt-4">
                 <QRCode
-                    size={120}
+                    size={170}
                     style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                     value={`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`}
                     viewBox={`0 0 120 120`}
                 />
-                <div className=' font-extrabold text-center mt-1 text-black'>QR code</div>
+                {/* <div className=' font-extrabold text-center mt-1 text-black'>QR code</div> */}
             </div>
         </div>
     )

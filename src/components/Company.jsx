@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import waltonbd_logo from '../images/waltonbd_logo.jpg'
 import tuborg_company from '../images/tuborg_company.jpg';
 import cpy from '../images/chevron/cpy.jpg';
-import compnay_one from '../images/okinawascoters/company_one.png';
-import compnay_two from '../images/okinawascoters/company_two.png';
+import compnay_one from '../images/okinawascoters/c1.webp';
+import compnay_two from '../images/okinawascoters/c2.jpg';
 
 
 const Company = () => {
