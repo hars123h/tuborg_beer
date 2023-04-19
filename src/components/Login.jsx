@@ -99,7 +99,7 @@ const Login = () => {
                 <div className='text-sm'>{text}</div>
             </div> : null}
             <div className='text-center'>
-                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={220} />
+                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={320} />
             </div>
             <div className='flex flex-col m-auto w-[74%]'>
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">

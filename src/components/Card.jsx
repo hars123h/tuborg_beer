@@ -53,16 +53,16 @@ const Card = ({pre_sale, long_plan_state, product_type, product_image, plan_name
       {
         pre_sale === false ? (
           product_type === 'long' ? (
-            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-yellow-400"
               onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
               Buy Now
             </div>
           ) : (long_plan_state === true) && false ? (
-            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]">
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-yellow-400">
               Buy Now
             </div>
           ) : (
-            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-yellow-400"
               onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
               Buy Now
             </div>
