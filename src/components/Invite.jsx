@@ -80,8 +80,8 @@ const Invite = () => {
 
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col  rounded-lg bg-white text-red-800 font-bold mt-5">
                     <div className='font-bold text-black'>Invitation Link:</div>
-                    <div className='p-1 text-black rounded-md border overflow-hidden border-red-800'>{`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`}</div>
-                    <CopyToClipboard text={`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('link copied successfully!')}>
+                    <div className='p-1 text-black rounded-md border overflow-hidden border-red-800'>{`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`}</div>
+                    <CopyToClipboard text={`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('link copied successfully!')}>
                         <span className='w-[80px] bg-red-800 text-red-900 font-bold text-center p-2'>Copy</span>
                     </CopyToClipboard>
                 </div>
@@ -100,7 +100,7 @@ const Invite = () => {
                 <QRCode
                     size={170}
                     style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                    value={`https://anveshank2.website/register/invite_code/${userDetails.user_invite}`}
+                    value={`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`}
                     viewBox={`0 0 120 120`}
                 />
                 {/* <div className=' font-extrabold text-center mt-1 text-black'>QR code</div> */}
