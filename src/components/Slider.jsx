@@ -12,6 +12,7 @@ import tuborg_slide3 from '../images/tuborg_slide3.jpg';
 import slide1 from '../images/okinawascoters/s1.jpg';
 import slide2 from '../images/okinawascoters/s2.jpg';
 import slide3 from '../images/okinawascoters/s3.jpg';
+import slide4 from '../images/okinawascoters/s4.jpg';
 
 
 const Slider = () => {
@@ -21,6 +22,11 @@ const Slider = () => {
         <div>
           <img src={slide1} className="h-[180px]" alt="img_3" />
         </div>
+
+        <div>
+          <img src={slide4} className="h-[180px]" alt="img_3" />
+        </div>
+
         <div>
           <img src={slide2} className="h-[180px]" alt="img_2" />
         </div>

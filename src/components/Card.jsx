@@ -14,7 +14,7 @@ const Card = ({pre_sale, long_plan_state, product_type, product_image, plan_name
         {/* <div className="title text-[#464945] font-bold text-lg">{plan_name}</div>         */}
         <div className="info text-xs flex flex-col items-center">
             <img src={product_image} alt="comp_img" className='shadow-xl h-40 w-full mb-1' />
-            <div className="title text-red-800 text-center w-full px-1 ml-1  font-bold text-[16px] mt-3 mb-2">{plan_name}</div>
+            <div className="title text-blue-600 text-center w-full px-1 ml-1  font-bold text-[16px] mt-3 mb-2">{plan_name}</div>
             {/* {product_type==='long' && (<div className="text-xs font-black px-1 ml-1 w-full  text-orange-500 ">Daily Income, Daily Withdrawals</div>)} */}
             {/* {product_type==='short' && (<div className="text-xs p-1 w-full  text-red-500 font-extrabold">Daily Income, Daily Withdrawals</div>)} */}
             <div className='text-md w-full grid grid-cols-1 p-3 gap-2 text-[#2a0118]'>
@@ -53,16 +53,16 @@ const Card = ({pre_sale, long_plan_state, product_type, product_image, plan_name
       {
         pre_sale === false ? (
           product_type === 'long' ? (
-            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
               onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
               Buy Now
             </div>
           ) : (long_plan_state === true) && false ? (
-            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]">
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]">
               Buy Now
             </div>
           ) : (
-            <div className="cursor-pointer btn text-white font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
+            <div className="cursor-pointer btn text-blue-600 font-semibold text-center  py-2  px-2 mt-1 text-md rounded-lg mb-2 shadow-md  w-4/5 mx-auto bg-[#2a0118]"
               onClick={() => handleClick(product_type, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle)}>
               Buy Now
             </div>

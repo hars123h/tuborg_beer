@@ -82,7 +82,7 @@ const RechargeWindow = () => {
     return (
         <div className='sm:h-[700px] md:h-[950px] flex flex-col   bg-white relative'>
             {toasterShow ? <div className='absolute top-[350px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 bg-black opacity-100 text-white px-2 py-1 rounded-md'>
+                <div className='flex text-sm gap-2 bg-black opacity-60 text-white px-5 rounded-sm  py-4'>
                     <div>{toasterText}</div>
                 </div>
             </div> : null}
@@ -106,7 +106,7 @@ const RechargeWindow = () => {
                 <div className='text-sm border-y-2 border-gray-50 py-3 tl'><span >Step 1: Transfer</span><span className='text-[#d375de] ml-2'>&#8377; {recharge_value}.00 to the following upi</span></div>
                 <div className="flex flex-col items-center w-full">
                     <div className='text-center bg-[#f5f8c2] py-3 mt-1 text-lg mb-4 w-full'>{amountDetails.upi_id}</div>
-                    <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('Copied to clipboard')}>
+                    <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('UPI copied successfully!')}>
                         <div className='text-sm px-3 py-1 text-red-800 cursor-pointer border border-red-800 rounded-md'>Copy Beneficiary UPI</div>
                     </CopyToClipboard>
                 </div>
