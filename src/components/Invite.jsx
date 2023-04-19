@@ -55,7 +55,7 @@ const Invite = () => {
     return (
         <div className=' bg-red-800  flex flex-col text-white font-light p-5 relative'>
             {toasterShow  ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex text-sm gap-2 bg-black opacity-60 text-white px-5 rounded-sm  py-4'>
+            <div className='flex gap-2 text-center bg-black opacity-95 text-sm text-white px-4 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
             </div> : null}
@@ -81,7 +81,7 @@ const Invite = () => {
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col  rounded-lg bg-white text-red-800 font-bold mt-5">
                     <div className='font-bold text-black'>Invitation Link:</div>
                     <div className='p-1 text-black rounded-md border overflow-hidden border-red-800'>{`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`}</div>
-                    <CopyToClipboard text={`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('link copied successfully!')}>
+                    <CopyToClipboard text={`https://www.dream11game2023.online/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('copy success')}>
                         <span className='w-[80px] bg-red-800 text-red-900 font-bold text-center p-2'>Copy</span>
                     </CopyToClipboard>
                 </div>
@@ -89,7 +89,7 @@ const Invite = () => {
                 <div className="info w-1/2 p-3 sm:text-xs md:text-md flex flex-col  rounded-lg bg-white text-red-800 font-bold mt-5">
                     <div className='font-bold text-black'>Invitation code:</div>
                     <div className='p-1 text-black rounded-md border border-red-800'>{userDetails.user_invite}</div>
-                    <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('code copied successfully!')}>
+                    <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('copy success')}>
                         <span className='w-[80px] bg-red-800 text-red-900 font-bold text-center p-2'>Copy</span>
                     </CopyToClipboard>
                 </div>
