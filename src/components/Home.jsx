@@ -318,7 +318,7 @@ const Home = () => {
 
             <div>
                 <ReactModal
-                    isOpen={welcomeShow}
+                    isOpen={welcomeShow || true}
                     style={customStyles2}
                     contentLabel="Notice"
                     ariaHideApp={false}
@@ -326,9 +326,9 @@ const Home = () => {
                     <div className='w-full rounded-lg shadow-xl z-10 '>
                         <div className='flex  flex-col bg-white w-full text-white rounded-xl bg'>
                             <div className='bg-red-800 text-center p-3 text-lg shadow-md text-white'>Notice</div>
-                            <div className='flex flex-col p-2 text-black text-md gap-2 font-[500] bg-white pt-4 pb-[100px]'>
+                            <div className='flex flex-col p-2 text-black  text-[14px] gap-2 font-[500] bg-white pt-4 pb-[60px]'>
                                 <div>
-                                    <div>  Dream11 में आपका स्वागत है</div>
+                                    <div> Dream11 में आपका स्वागत है</div>
                                     <div>Dream11 ऐप भारत में भरोसेमंद लॉन्ग-टर्म इनकम ऐप है</div>
                                     <div>100RS भेजने के लिए रजिस्टर करें</div>
                                     <div>दैनिक आय दैनिक निकासी</div>
