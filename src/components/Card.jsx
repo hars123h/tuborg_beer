@@ -18,21 +18,21 @@ const Card = ({pre_sale, long_plan_state, product_type, product_image, plan_name
             {/* {product_type==='long' && (<div className="text-xs font-black px-1 ml-1 w-full  text-orange-500 ">Daily Income, Daily Withdrawals</div>)} */}
             {/* {product_type==='short' && (<div className="text-xs p-1 w-full  text-red-500 font-extrabold">Daily Income, Daily Withdrawals</div>)} */}
             <div className='text-md w-full grid grid-cols-1 p-3 gap-2 text-[#2a0118]'>
-              <div className="basic_info text-bold flex justify-start gap-1 bg-red-800 rounded-lg h-[40px] items-center pl-1">
-                <div className='font-bold'>Project Amount: </div>
-                <div className='text-red-600 font-bold'>&#8377;{new Intl.NumberFormat().format(plan_amount)}</div>
+              <div className="basic_info text-bold flex justify-start gap-1 bg-red-700 rounded-lg h-[40px] items-center pl-1">
+                <div className='font-bold text-white'>Project Amount: </div>
+                <div className='text-white font-bold'>&#8377;{new Intl.NumberFormat().format(plan_amount)}</div>
               </div>
-              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-800 rounded-lg h-[40px] items-center pl-1">
-                <div className='font-bold'>Daily Earnings: </div>
-                <div className='text-red-600 font-bold'>&#8377;{new Intl.NumberFormat().format(plan_daily_earning)}</div>
+              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-700 rounded-lg h-[40px] items-center pl-1">
+                <div className='font-bold text-white'>Daily Earnings: </div>
+                <div className='text-white font-bold'>&#8377;{new Intl.NumberFormat().format(plan_daily_earning)}</div>
               </div>
-              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-800 rounded-lg h-[40px] items-center pl-1">
-                <div className='font-bold'>Project Cycle:</div> 
-                <div className='text-red-600 font-bold'>{plan_cycle} days</div>
+              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-700 rounded-lg h-[40px] items-center pl-1">
+                <div className='font-bold text-white'>Project Cycle:</div> 
+                <div className='text-white font-bold'>{plan_cycle} days</div>
               </div>
-              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-800 rounded-lg h-[40px] items-center pl-1">
-                <div className='font-bold'>Total Earning: </div>
-                <div className='text-red-600 font-bold'>&#8377;{new Intl.NumberFormat().format(plan_cycle*plan_daily_earning)}</div>
+              <div className="basic_info  text-bold  flex justify-start gap-1 bg-red-700 rounded-lg h-[40px] items-center pl-1">
+                <div className='font-bold text-white'>Total Earning: </div>
+                <div className='text-white font-bold'>&#8377;{new Intl.NumberFormat().format(plan_cycle*plan_daily_earning)}</div>
               </div>
             </div>
 
