@@ -289,9 +289,9 @@ const Mine = () => {
                 <div>Home</div>
               </div>
 
-              <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                <img src={download} alt="recharge" className='w-[30px] h-[30px]' />
-                <div>Download</div>
+              <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={()=>navigate('/company')}>
+                <img src={m1} alt="recharge" className='w-[30px] h-[30px]' />
+                <div>Company</div>
               </div>
               <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/team')}>
                 <img src={user} alt="app_dwd" className='w-[30px] h-[30px]' />

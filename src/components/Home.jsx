@@ -398,7 +398,7 @@ const Home = () => {
                         <div className='text-[12px] font-[700]'>Invite</div>
                     </div>
 
-                    <a href="https://telegram.me/chevronoil55" className=' no-underline  cursor-pointer'>
+                    <a href="https://telegram.me/Dream11group777" className=' no-underline  cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={h1} alt="recharge" className='w-10' />
                             <div className='text-[12px] font-[700]'>Online</div>
@@ -428,16 +428,16 @@ const Home = () => {
                     <div className='grid grid-cols-1'>
                         {userDetails && amountDetails?.plan_state && (
                             <div className='grid grid-cols-2 gap-1 pb-[60px]'>
-                                {(userDetails.boughtLong < 1 || amountDetails.plan_state[0] === 0) ?
+                                {(userDetails && amountDetails.plan_state[0] === 0) ?
                                     (<span className='pointer-events-none'>
                                         <Card pre_sale={amountDetails.plan_state[0] === 0} long_plan_state={userDetails.boughtLong < 1} product_type={"short"} product_image={pro} handleClick={handleClick} plan_name={"Dream11 1"} plan_cycle={3} plan_daily_earning={400} plan_amount={700} plan_type={'Short Plan'} />
                                     </span>) :
                                     (<span className=''>
                                         <Card pre_sale={amountDetails.plan_state[0] === 0} long_plan_state={userDetails.boughtLong < 1} product_type={"short"} product_image={pro} handleClick={handleClick} plan_name={"Dream11 1"} plan_cycle={3} plan_daily_earning={400} plan_amount={700} plan_type={'Short Plan'} />
                                     </span>
-                                    )}
+                                )}
 
-                                {userDetails && (amountDetails.plan_state[0] === 1) ? (
+                                {userDetails && (amountDetails.plan_state[1] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card pre_sale={amountDetails.plan_state[1] === 0} long_plan_state={userDetails.boughtLong < 1} product_type={"long"} product_image={pro} handleClick={handleClick} plan_name={"Dream11 2"} plan_cycle={365} plan_daily_earning={210} plan_amount={800} plan_type={'Big Plan'} />
                                     </span>
