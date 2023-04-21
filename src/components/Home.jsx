@@ -398,7 +398,7 @@ const Home = () => {
                         <div className='text-[12px] font-[700]'>Invite</div>
                     </div>
 
-                    <a href="https://telegram.me/Dream11group777" className=' no-underline  cursor-pointer'>
+                    <a href="https://telegram.me/Dream11joingroup1" className=' no-underline  cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={h1} alt="recharge" className='w-10' />
                             <div className='text-[12px] font-[700]'>Online</div>
