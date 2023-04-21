@@ -68,64 +68,8 @@ const Team = () => {
 
   if (loading || userDetails === null) {
     return (
-      <div className='bg-white'>
-        {/* [#2e9afe] */}
-        <div className="top flex items-center my-auto text-center h-10 p-1 bg-red-800 text-white text-md font-medium">
-          <div className='absolute flex w-32 cursor-pointer' onClick={() => navigate(-1)}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </div>
-          <div className='flex-grow'>My Team</div>
-        </div>
-
-        <div className="flex flex-row justify-between items-center p-2 border-b border-gray-300" >
-          <div className='flex flex-row justify-between items-center flex-grow mx-2'>
-            <input type="date" name="date_from" id="date_from"
-              className=' outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
-            <div className='font-medium mx-1'>to</div>
-            <input type="date" name="date_from" id="date_from"
-              className='outline-none rounded-full bg-gray-100 py-[2px] w-[100px]' />
-          </div>
-          <div>
-            <button className="bg-red-800 text-white text-xs px-2 rounded-full py-[3px] flex items-center gap-1">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-                className="w-3 h-3 stroke-white">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-              <div>search for</div>
-            </button>
-          </div>
-        </div>
-        {/*userDetails.directRecharge * (amountDetails.level1_percent) / 100) + (userDetails.indirectRecharge * (amountDetails.level2_percent) / 100) + (userDetails.in_indirectRecharge * (amountDetails.level3_percent) / 100 */}
-        <div className="flex border-b border-gray-300">
-          <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
-            <div className='text-gray-700 text-[9px] leading-3'>Team assets (&#8377;)</div>
-            <div className='text-red-900 text-[20px]'>&#8377;0.00</div>
-          </div>
-          <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
-            <div className='text-gray-700 text-[9px] leading-3'>Team recharge (&#8377;)</div>
-            <div className='text-red-900 text-[20px]'>&#8377;0.00</div>
-          </div>
-          <div className="flex flex-col w-1/3 pt-1 px-2">
-            <div className='text-gray-700 text-[9px] leading-3'>Team Number</div>
-            <div className='text-red-900 text-[20px]'>0</div>
-          </div>
-        </div>
-
-        <div className='flex flex-col items-center w-full   bg-white '>
-
-
-          <div className="flex items-center w-full font-[300]">
-            <div className={`${currentVisible === 'level1' ? 'text-red-700 border-b-2 border-red-700' : 'border-b-[0.5px] border-l-[0.5px] border-r-[0.5px] border-gray-200 text-gray-600'} p-1 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level1')}>First</div>
-            <div className={`${currentVisible === 'level2' ? 'text-red-700 border-b-2 border-red-700' : 'border-b-[0.5px] border-l-[0.5px] border-r-[0.5px] border-gray-200 text-gray-600'} p-1 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level2')}>Second</div>
-            <div className={`${currentVisible === 'level3' ? 'text-red-700 border-b-2 border-red-700' : 'border-b-[0.5px] border-l-[0.5px] border-r-[0.5px] border-gray-200 text-gray-600'} p-1 text-center text-md w-1/3`} onClick={e => setCurrentVisible('level3')}>Third</div>
-          </div>
-
-
-        </div>
-
-
+      <div className='h-screen grid place-items-center'>
+        <div>Loading...</div>
       </div>
     )
   }
