@@ -174,19 +174,19 @@ const Mine = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-1">
-          <div>{balance}</div>
+          <div>{Math.floor(balance)}</div>
           <div>Balance</div>
         </div>
 
         <div className='flex flex-row w-full items-center h-20'>
 
           <div className="flex flex-col justify-center items-center gap-1 w-1/2 border-r border-white h-full">
-            <div>{recharge_amount}</div>
+            <div>{Math.floor(recharge_amount)}</div>
             <div>Recharge</div>
           </div>
 
           <div className="flex flex-col w-1/2 h-full justify-center items-center gap-1">
-            <div>{earning}</div>
+            <div>{Math.floor(earning)}</div>
             <div>Earning</div>
           </div>
         </div>

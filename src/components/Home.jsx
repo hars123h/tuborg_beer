@@ -401,7 +401,7 @@ const Home = () => {
                                 ) : (
                                     <span>
                                         <Card product_type={"long"} product_image={p1} handleClick={handleClick} plan_name={"Okinawascoters 1"} plan_cycle={365} plan_daily_earning={135} plan_amount={610} plan_type={'Big Plan'} />
-                                    </span>
+                                     </span>
                                 )}
 
                                 {userDetails && (amountDetails.plan_state[1] === 0) ? (
