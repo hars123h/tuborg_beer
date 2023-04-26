@@ -72,14 +72,14 @@ const Invite = () => {
             </p>
 
             <div className='p-3 font-bold cursor-pointer'>
-                <CopyToClipboard text={`https://www.okinawscoter.online/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('Copied to clipboard')}>
+                <CopyToClipboard text={`https://www.okinawscoter.online/register/invite_code/${userDetails.user_invite}`} onCopy={() => toaster('copy success')}>
                     <span>Invite Link: click to copy</span>
                 </CopyToClipboard>
             </div>
 
             <div className="invitation flex p-3">
                 <div className='font-bold'>Invitation code: {userDetails.user_invite}</div>
-                <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('Copied to clipboard')}>
+                <CopyToClipboard text={userDetails.user_invite} onCopy={() => toaster('copy success')}>
                     <span className='ml-2'>Copy code</span>
                 </CopyToClipboard>
             </div>
