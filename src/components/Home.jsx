@@ -316,11 +316,11 @@ const Home = () => {
                                 <div>Welcome to Okinawascoters investment Platform</div>
                                 <div>Let Okinawascoters create unlimited wealth with you.</div>
                                 <div>The Okinawascoters APP is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 450 &#8377; Earn 110 &#8377; Daily</div>
-                                <div>Invest 1100 &#8377; Earn 320 &#8377; Daily</div>
-                                <div>Invest 1850 &#8377; Earn 510 &#8377; Daily</div>
-                                <div>Invest 5100 &#8377; Earn 1540 &#8377; Daily</div>
-                                <div>Invest 15200 &#8377; Earn 4660 &#8377; Daily</div>
+                                <div>Invest 610 &#8377; Earn 135 &#8377; Daily</div>
+                                <div>Invest 2600 &#8377; Earn 480 &#8377; Daily</div>
+                                <div>Invest 3600 &#8377; Earn 740 &#8377; Daily</div>
+                                <div>Invest 6100 &#8377; Earn 1080 &#8377; Daily</div>
+                                <div>Invest 12000 &#8377; Earn 2360 &#8377; Daily</div>
                             </div>
 
                             <div className='border-t border-gray-600 my-1'></div>
@@ -357,7 +357,7 @@ const Home = () => {
             <div className="bg-red-800 rounded-lg text-white relative flex overflow-x-hidden  mx-auto mt-2 border-2 border-gray-100 sm:w-3/5 lg:w-3/5 overflow-y-hidden">
                 <div className="flex flex-row justify-around items-center w-full py-2">
 
-                    <a href="https://telegram.me/chevronoil55" className=' no-underline text-white cursor-pointer'>
+                    <a href="https://t.me/okinawascoters" className=' no-underline text-white cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={asset0} alt="online" className='w-10' />
                             <div>Online</div>

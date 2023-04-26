@@ -88,44 +88,44 @@ const Login = () => {
     return (
         <div className='relative bg-white'>
             {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 bg-black opacity-90 text-white px-2 py-1 rounded-md'>
+                <div className='flex gap-2 bg-black opacity-100 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
             </div> : null}
-            {loading ? <div className='flex gap-2 bg-black text-white py-2 px-2  rounded-md opacity-70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {loading ? <div className='flex gap-2 bg-black text-white py-2 px-2  rounded-md opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 {text === 'Loading' ? <div>
                     <RotatingLines strokeColor='white' width='20' />
                 </div> : null}
                 <div className='text-sm'>{text}</div>
             </div> : null}
             <div className='text-center'>
-                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={220} />
+                <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-14' width={320} />
             </div>
             <div className='flex flex-col m-auto w-[74%]'>
                 <div className=" items-center mb-3 p-2 phoneno flex  bg-[#f1f1f1] rounded-md ">
                     <div className='flex items-center border-r-2 pr-2 border-solid border-gray-300'>
                         <img src={asset0} alt="user" className='h-5 ' />
-                        <span className='text-sm mb-1'>+91</span>
+                        {/* <span className='text-sm mb-1'>+91</span> */}
                     </div>
-                    <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll' />
+                    <input value={mobno} onChange={(e) => setmobno(e.target.value)} type="text" placeholder='Phone number' name="phone_no" id="phone_no" className='pl-1 bg-[#f1f1f1]  outline-none overflow-x-scroll placeholder:text-gray-600' />
                 </div>
 
                 <div className=" items-center p-2 passowrd flex  bg-[#f1f1f1] rounded-md ">
                     <img src={asset1} alt="user" className='h-5 border-r-2 pr-2 border-solid border-gray-300' />
-                    <input value={pwd} onChange={(e) => setpwd(e.target.value)} type="password" placeholder='Login password' name="password" id="pwrd" className='pl-1 bg-[#f1f1f1] outline-none overflow-x-scroll' />
+                    <input value={pwd} onChange={(e) => setpwd(e.target.value)} type="password" placeholder='Login password' name="password" id="pwrd" className='pl-1 bg-[#f1f1f1] outline-none overflow-x-scroll placeholder:text-gray-600' />
                 </div>
                 {/*[#0096D5] */}
                 <div className='mt-16 flex flex-col gap-6'>
-                    <button onClick={handleSignIn} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-md shadow-md shadow-red-800
+                    <button onClick={handleSignIn} style={{boxShadow: "-1px 5px 15px 0 #7c925e"}} className='bg-red-800 w-full pt-2 pb-2 text-[20px] text-black rounded-full 
                     '>Login</button>
-                    {/* <button onClick={() => navigate('/register')} className='bg-red-800 w-full pt-2 pb-2 text-lg text-white rounded-full shadow-md shadow-red-800
-                    '>Register</button> */}
+                    <button onClick={() => navigate('/register')} style={{boxShadow: "-1px 5px 15px 0 #7c925e"}} className='bg-red-800 w-full pt-2 pb-2 text-[20px] text-black rounded-full 
+                    '>Register</button>
                 </div>
                 {/*[#379EFE] */}
                 <div className="options flex justify-between mt-2">
                     {/* <div className='text-red-800 cursor-pointer' onClick={() => navigate('/register')}>Register</div> */}
-                    <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div>
-                    <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/forgot')}>Forget password?</div>
+                    {/* <div className='cursor-pointer text-red-800 ' onClick={() => navigate('/register')}>Register</div> */}
+                    {/* <div className='cursor-pointer text-black' onClick={() => navigate('/forgot')}>Forget password?</div> */}
                 </div>
 
             </div>
