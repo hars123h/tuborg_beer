@@ -1,19 +1,19 @@
 {
-  "short_name": "Dream11",
+  "short_name": "Okinawascoters",
   "name": "WebApp",
   "icons": [
     {
-      "src": "dream11.png",
+      "src": "bag.png",
       "sizes": "200x54",
       "type": "image/x-icon"
     },
     {
-      "src": "dream11.png",
+      "src": "bag.png",
       "type": "image/png",
       "sizes": "200x54"
     },
     {
-      "src": "dream11.png",
+      "src": "bag.png",
       "type": "image/png",
       "sizes": "200x54"
     }

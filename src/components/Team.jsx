@@ -11,7 +11,7 @@ import asset4 from '../images/assets2/asset 4.png';
 import asset5 from '../images/assets2/asset 5.png';
 import asset6 from '../images/assets2/asset 6.png';
 import asset7 from '../images/assets2/asset 7.png';
-import okinawascoters from '../images/okinawascoters/nlogo.png';
+import okinawascoters from '../images/okinawascoters/ologo.jpg';
 
 
 
@@ -108,15 +108,15 @@ const Team = () => {
       <div className="flex border-b border-gray-300">
         <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
           <div className='text-gray-700 text-[9px] leading-3'>Team assets (&#8377;)</div>
-          <div className='text-red-900 text-[20px]'>&#8377;{Math.floor(assetValue)}.00</div>
+          <div className='text-blue-800 text-[20px]'>&#8377;{assetValue}</div>
         </div>
         <div className="flex flex-col w-1/3 pt-1 px-2 border-r border-gray-300">
           <div className='text-gray-700 text-[9px] leading-3'>Team recharge (&#8377;)</div>
-          <div className='text-red-900 text-[20px]'>&#8377;{Math.floor(userDetails.directRecharge + userDetails.indirectRecharge + userDetails.in_indirectRecharge)}.00</div>
+          <div className='text-blue-800 text-[20px]'>&#8377;{(userDetails.directRecharge + userDetails.indirectRecharge + userDetails.in_indirectRecharge)}</div>
         </div>
         <div className="flex flex-col w-1/3 pt-1 px-2">
           <div className='text-gray-700 text-[9px] leading-3'>Team Number</div>
-          <div className='text-red-900 text-[20px]'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
+          <div className='text-blue-800 text-[20px]'>{userDetails.directMember.length + userDetails.indirectMember.length + userDetails.in_indirectMember.length}</div>
         </div>
       </div>
 
@@ -136,8 +136,7 @@ const Team = () => {
               <div>Level 1 Earning: &#8377;{(userDetails.directRecharge) * (amountDetails.level1_percent / 100)}</div>
             </div> */}
 
-            {level1.length === 0 ? (<><div className='text-center text-gray-800  font-medium mt-5 text-sm'>No record</div>
-              <div className='text-center text-gray-400  font-medium text-xs mt-[80px]'>no data</div></>) : null}
+            {level1.length === 0 ? (<div className='text-center text-gray-400 font-medium mt-5 text-sm'>No record</div>) : null}
 
             {/*{Math.max(0,element.recharge_amount + element.earning - element.balance)} */}
             {level1.map((element, index) => {
@@ -146,14 +145,14 @@ const Team = () => {
                   <div className='flex items-start gap-3 w-full'>
                     <img src={okinawascoters} alt="turbo_logo" width={70} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
-                      {/* <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div> */}
-                      <div className='text-red-700'>Recharge: {(element.recharge_amount)}</div>
+                      <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div>Recharge: {(element.recharge_amount)}</div>
                       <div>withdraw:
                         {element.withdrawal_sum}
                       </div>
                     </div>
                     <div className='flex flex-col  items-end flex-grow'>
-                      <div className='text-red-700'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-fuchsia-600'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
                       <div className='text-right text-fuchsia-600'>{new Date(element.time).getHours() + ":" + new Date(element.time).getMinutes() + ":" + new Date(element.time).getSeconds()}</div>
@@ -172,8 +171,7 @@ const Team = () => {
               <div>Level 2 Earning: &#8377;{(userDetails.indirectRecharge) * (amountDetails.level2_percent / 100)}</div>
             </div> */}
 
-            {level2.length === 0 ? (<><div className='text-center text-gray-800  font-medium mt-5 text-sm'>No record</div>
-              <div className='text-center text-gray-400  font-medium text-xs mt-[80px]'>no data</div></>) : null}
+            {level2.length === 0 ? (<div className='text-center text-gray-400 font-medium mt-5 text-sm'>No record</div>) : null}
 
 
             {level2.map((element, index) => {
@@ -182,12 +180,12 @@ const Team = () => {
                   <div className='flex items-start gap-3 w-full'>
                     <img src={okinawascoters} alt="turbo_logo" width={80} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
-                      {/* <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div> */}
-                      <div className='text-red-700'>Recharge: {(element.recharge_amount)}</div>
+                      <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div>Recharge: {(element.recharge_amount)}</div>
                       <div>withdraw: {element.withdrawal_sum}</div>
                     </div>
                     <div className='flex flex-col items-end flex-grow'>
-                      <div className='text-red-700'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-fuchsia-600'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
                       <div className='text-right text-fuchsia-600'>{new Date(element.time).getHours() + ":" + new Date(element.time).getMinutes() + ":" + new Date(element.time).getSeconds()}</div>
@@ -206,8 +204,7 @@ const Team = () => {
               <div>Level 3 Earning: &#8377;{(userDetails.in_indirectRecharge) * (amountDetails.level3_percent / 100)}</div>
             </div> */}
 
-            {level3.length === 0 ? (<><div className='text-center text-gray-800  font-medium mt-5 text-sm'>No record</div>
-              <div className='text-center text-gray-400  font-medium text-xs mt-[80px]'>no data</div></>) : null}
+            {level3.length === 0 ? (<div className='text-center text-gray-400  font-medium mt-5 text-sm'>No record</div>) : null}
 
             {level3.map((element, index) => {
               return (
@@ -215,12 +212,12 @@ const Team = () => {
                   <div className='flex items-start gap-3 w-full'>
                     <img src={okinawascoters} alt="turbo_logo" width={80} className='m-1' />
                     <div className='text-sky-500 flex flex-col'>
-                      {/* <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div> */}
-                      <div className='text-red-700'>Recharge: {(element.recharge_amount)}</div>
+                      <div className='text-gray-700'>Name: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div>Recharge: {(element.recharge_amount)}</div>
                       <div>withdraw: {element.withdrawal_sum}</div>
                     </div>
                     <div className='flex flex-col  items-end flex-grow'>
-                      <div className='text-red-700'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
+                      <div className='text-sky-500'>phone: {String(element.mobno).substring(0, 3) + "****" + String(element.mobno).substring(7)}</div>
                       <div className='text-green-500 font-medium'>Recommended number: {(element.directMember.length + element.indirectMember.length + element.in_indirectMember.length)}</div>
                       <div className='text-fuchsia-600'>Registration time: {new Date(element.time).getDate() + '-' + new Date(element.time).getMonth() + '-' + new Date(element.time).getFullYear()}</div>
                       <div className='text-right text-fuchsia-600'>{new Date(element.time).getHours() + ":" + new Date(element.time).getMinutes() + ":" + new Date(element.time).getSeconds()}</div>

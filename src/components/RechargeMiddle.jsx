@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useContext, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AmountContext } from '../App';
-import amazon from '../images/okinawascoters/prlogo.png';
+import amazon from '../images/okinawascoters/ologo.jpg';
 
 
 const Recharge = () => {
@@ -56,8 +56,8 @@ const Recharge = () => {
                                 <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Dream11 UPI-1 <span className='text-white font-semibold py-[2px] px-[3px] bg-red-500 rounded-md ml-1 text-[12px]'>HOT</span></div>
-                                <div className='text-xs text-gray-500'>Dream11 UPI-1</div>
+                                <div>Okinawascoters UPI-1 <span className='text-white font-semibold py-[2px] px-[3px] bg-red-500 rounded-md ml-1 text-[12px]'>HOT</span></div>
+                                <div className='text-xs text-gray-500'>Okinawascoters UPI-1</div>
                             </div>
                         </div>
                         <div className=''>
@@ -75,8 +75,8 @@ const Recharge = () => {
                                 <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Dream11 UPI-2 </div>
-                                <div className='text-xs text-gray-500'>Dream11 UPI-2</div>
+                                <div>Okinawascoters UPI-2 </div>
+                                <div className='text-xs text-gray-500'>Okinawascoters UPI-2</div>
                             </div>
                         </div>
                         <div className=''>
@@ -94,8 +94,8 @@ const Recharge = () => {
                                 <img src={amazon} className="w-[50px] h-[50px] rounded-md" />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div>Dream11 UPI-3</div>
-                                <div className='text-xs text-gray-500'>Dream11 UPI-3</div>
+                                <div>Okinawascoters UPI-3</div>
+                                <div className='text-xs text-gray-500'>Okinawascoters UPI-3</div>
                             </div>
                         </div>
                         <div className=''>

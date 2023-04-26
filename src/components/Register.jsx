@@ -16,7 +16,7 @@ import { PhoneAndroid, VerifiedUserOutlined, LockOutlined } from '@material-ui/i
 import { Typography } from '@material-ui/core';
 import wind_login from '../images/wind_login.jpg'
 import tuborg_logo from '../images/tuborg_logo.svg';
-import clogo from '../images/okinawascoters/nlogo.png';
+import clogo from '../images/okinawascoters/ologo.jpg';
 
 
 const Register = () => {
@@ -134,13 +134,13 @@ const Register = () => {
             <div className='flex-grow font-[400]'>Register</div>
         </div>
         <div className='text-center'>
-            <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-10 mb-4 ' width={"80%"} />
+            <img src={clogo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-10 mb-4 ' width={"70%"} />
         </div>
         <div style={{ boxShadow: "0 0.053333rem 0.533333rem 0.053333rem #dfdfdf" }} className="box mb-20   gap-2 m-auto  rounded-xl lg:w-2/5 w-[88%]  p-4 w-50% flex flex-col">
             <div className='outline-none flex items-center justify-between mb-2  rounded-full border border-gray-200'>
                 <div className='w-full cstm_b rounded-full px-2'>
                     <input value={mobno} onChange={e => setMobno(e.target.value)} type="text"
-                        className=' p-[7px] w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-[14px]' placeholder='Phone Number' name="phoneno" id="phoneno" />
+                        className=' p-[7px] w-full  outline-none rounded-full rounded-tr-full placeholder-gray-600 placeholder:text-[14px]' placeholder='Please enter a valid phone number' name="phoneno" id="phoneno" />
                 </div>
             </div>
             {/* <div className='flex border-b-2 border-gray-300 rounded-full mb-2 px-2 bg-white'>
@@ -171,7 +171,7 @@ const Register = () => {
             </div>
 
 
-            <button onClick={handleRegister} className='bg-red-800 text-black text-center py-[5px]  rounded-full text-[20px]'>Register</button>
+            <button onClick={handleRegister} className='bg-red-800 text-white text-center py-[5px]  rounded-full text-lg'>Register</button>
             <div onClick={() => navigate('/login')} className='cursor-pointer text-center text-red-800  p-[7px] mb-2 bg-white  rounded-full border border-gray-200'>
                 Already have an account, log in
             </div>

@@ -34,7 +34,3 @@ progress {
     background: rgb(253,173,2);
 background: linear-gradient(0deg, rgba(253,173,2,1) 0%, rgba(249,146,0,1) 35%, rgba(249,146,0,1) 100%, rgba(249,125,3,1) 100%);
   }
-
-  .example1::-webkit-scrollbar {
-    display: none;
-  }
